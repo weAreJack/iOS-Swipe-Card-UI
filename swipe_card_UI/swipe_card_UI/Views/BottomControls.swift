@@ -30,7 +30,6 @@ class BottomControls: UIView {
     // MARK: - Handlers
     
     fileprivate func setupUI() {
-        
         addSubview(dislikeButton)
         addSubview(backButton)
         addSubview(likeButton)
@@ -54,7 +53,6 @@ class BottomControls: UIView {
         likeButton.layer.cornerRadius = 40
         
         translatesAutoresizingMaskIntoConstraints = false
-        
     }
     
     static func createButton(image: UIImage) -> UIButton {

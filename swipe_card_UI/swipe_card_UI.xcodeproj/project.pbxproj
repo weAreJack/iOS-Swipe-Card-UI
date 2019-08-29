@@ -25,9 +25,10 @@
 		A0414AA9231473B8002DE53C /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414AA8231473B8002DE53C /* UIViewExtension.swift */; };
 		A0414AAB2314773F002DE53C /* BottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414AAA2314773F002DE53C /* BottomButton.swift */; };
 		A0414AAD231477E8002DE53C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414AAC231477E8002DE53C /* UIColorExtension.swift */; };
-		A0414AAF231537E7002DE53C /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414AAE231537E7002DE53C /* UIViewControllerExtension.swift */; };
 		A0414AB123153CA8002DE53C /* MatchedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414AB023153CA8002DE53C /* MatchedViewModel.swift */; };
 		A0414AB523166A22002DE53C /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414AB423166A22002DE53C /* RoundedImageView.swift */; };
+		A0414AB72316CC39002DE53C /* HomeController+Handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414AB62316CC39002DE53C /* HomeController+Handlers.swift */; };
+		A0414ACB23173657002DE53C /* MatchView+Handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414ACA23173657002DE53C /* MatchView+Handlers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,9 +73,10 @@
 		A0414AA8231473B8002DE53C /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		A0414AAA2314773F002DE53C /* BottomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButton.swift; sourceTree = "<group>"; };
 		A0414AAC231477E8002DE53C /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
-		A0414AAE231537E7002DE53C /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		A0414AB023153CA8002DE53C /* MatchedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedViewModel.swift; sourceTree = "<group>"; };
 		A0414AB423166A22002DE53C /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
+		A0414AB62316CC39002DE53C /* HomeController+Handlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeController+Handlers.swift"; sourceTree = "<group>"; };
+		A0414ACA23173657002DE53C /* MatchView+Handlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchView+Handlers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				A0414A9723144112002DE53C /* HomeController.swift */,
+				A0414AB62316CC39002DE53C /* HomeController+Handlers.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				A0414AAA2314773F002DE53C /* BottomButton.swift */,
 				A0414A9F23145B41002DE53C /* NavBar.swift */,
 				A0414AA123145C7D002DE53C /* MatchView.swift */,
+				A0414ACA23173657002DE53C /* MatchView+Handlers.swift */,
 				A0414AA523145C9A002DE53C /* KeepSwipingButton.swift */,
 			);
 			path = Views;
@@ -202,7 +206,6 @@
 			children = (
 				A0414AA8231473B8002DE53C /* UIViewExtension.swift */,
 				A0414AAC231477E8002DE53C /* UIColorExtension.swift */,
-				A0414AAE231537E7002DE53C /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -341,8 +344,8 @@
 				A0414A9823144112002DE53C /* HomeController.swift in Sources */,
 				A0414AA023145B41002DE53C /* NavBar.swift in Sources */,
 				A0414A9C2314413D002DE53C /* House.swift in Sources */,
-				A0414AAF231537E7002DE53C /* UIViewControllerExtension.swift in Sources */,
 				A0414AA9231473B8002DE53C /* UIViewExtension.swift in Sources */,
+				A0414ACB23173657002DE53C /* MatchView+Handlers.swift in Sources */,
 				A0414A9E23145B35002DE53C /* BottomControls.swift in Sources */,
 				A0414AAB2314773F002DE53C /* BottomButton.swift in Sources */,
 				A0414A9A2314412C002DE53C /* Pet.swift in Sources */,
@@ -354,6 +357,7 @@
 				A0414AA623145C9A002DE53C /* KeepSwipingButton.swift in Sources */,
 				A0414A9623144105002DE53C /* Person.swift in Sources */,
 				A0414AA223145C7D002DE53C /* MatchView.swift in Sources */,
+				A0414AB72316CC39002DE53C /* HomeController+Handlers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

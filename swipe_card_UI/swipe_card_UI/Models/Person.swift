@@ -24,20 +24,17 @@ class Person : ProducesCardViewModel {
     // MARK: - Init
     
     init(dictionary: [String : Any]) {
-        
         self.name = dictionary["name"] as? String
         self.age = dictionary["age"] as? Int
         self.profession = dictionary["profession"] as? String
         self.relationshipStatus = dictionary["relationshipStatus"] as? String
         self.hometown = dictionary["hometown"] as? String
         self.image = dictionary["image"] as? UIImage
-        
     }
     
     // MARK: - Handlers
     
     func toCardViewModel() -> CardViewModel {
-        
         let attributedText = NSMutableAttributedString(string: name ?? "", attributes: [.font : UIFont.boldSystemFont(ofSize: 24)])
         
         let ageString = NSAttributedString(string: "\n\(age ?? 18)" , attributes: [.font : UIFont.systemFont(ofSize: 24)])
@@ -53,7 +50,6 @@ class Person : ProducesCardViewModel {
         let cardViewModel = CardViewModel(image: image ?? UIImage(), backgroundColour: backgroundColour, attributedIntro: attributedText, textAlignment: .left)
         
         return cardViewModel
-        
     }
     
 }

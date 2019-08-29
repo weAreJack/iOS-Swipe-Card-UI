@@ -24,20 +24,17 @@ class Car : ProducesCardViewModel {
     // MARK: - Init
     
     init(dictionary: [String : Any]) {
-        
         self.make = dictionary["make"] as? String
         self.model = dictionary["model"] as? String
         self.year = dictionary["age"] as? Int
         self.mileage = dictionary["mileage"] as? Int
         self.price = dictionary["price"] as? Int
         self.image = dictionary["image"] as? UIImage
-
     }
     
     // MARK: - Handlers
     
     func toCardViewModel() -> CardViewModel {
-
         let attributedText = NSMutableAttributedString(string: make ?? "", attributes: [.font : UIFont.boldSystemFont(ofSize: 24)])
         
         let modelString = NSAttributedString(string: "\n\(model ?? "")" , attributes: [.font : UIFont.systemFont(ofSize: 24)])

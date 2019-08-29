@@ -12,8 +12,7 @@ class NavBar: UIView {
     
     // MARK: - Properties
     
-    let notesIcon = UIImageView(image: #imageLiteral(resourceName: "like").withRenderingMode(.alwaysTemplate))
-    let notesLabel = UILabel()
+    let icon = UIImageView(image: #imageLiteral(resourceName: "swipe_card_UI_icon"))
     
     // MARK: - Init
     
@@ -29,29 +28,16 @@ class NavBar: UIView {
     // MARK: - Methods
     
     fileprivate func setupUI() {
-        
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .white
         dropShadow()
         
-        let stackView = UIStackView(arrangedSubviews: [notesIcon, notesLabel])
-        stackView.axis = .horizontal
-        stackView.spacing = 8
-        
-        notesIcon.tintColor = .colour1
-        notesIcon.heightAnchor.constraint(equalToConstant: 36).isActive = true
-        notesIcon.widthAnchor.constraint(equalToConstant: 36).isActive = true
-        
-        notesLabel.font = .boldSystemFont(ofSize: 20)
-        notesLabel.text = "Swipe!"
-        notesLabel.textColor = .colour1
-        
-        addSubview(stackView)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        stackView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        
-        
+        addSubview(icon)
+        icon.translatesAutoresizingMaskIntoConstraints = false
+        icon.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        icon.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        icon.heightAnchor.constraint(equalToConstant: 36).isActive = true
+        icon.widthAnchor.constraint(equalToConstant: 36).isActive = true
     }
     
 }

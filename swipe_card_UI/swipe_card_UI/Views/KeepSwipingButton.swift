@@ -20,7 +20,6 @@ class KeepSwipingButton: UIButton {
     // MARK: - Handlers
     
     fileprivate func setupUI(_ rect: CGRect) {
-        
         setTitle("Keep Swiping", for: .normal)
         setTitleColor(.white, for: .normal)
         
@@ -40,15 +39,12 @@ class KeepSwipingButton: UIButton {
         
         maskLayer.path = maskPath
         maskLayer.fillRule = .evenOdd
-        
         gradientLayer.mask = maskLayer
         self.layer.insertSublayer(gradientLayer, at: 0)
         
         clipsToBounds = true
         layer.cornerRadius = cornerRadius
-        
         gradientLayer.frame = rect
-        
     }
     
 }

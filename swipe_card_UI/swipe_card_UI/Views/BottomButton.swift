@@ -27,8 +27,8 @@ class BottomButton : UIButton {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .init(white: 0, alpha: 0.025)
         clipsToBounds = true
-        layer.borderColor = UIColor.colour3.cgColor
-        layer.borderWidth = 1
+        layer.borderColor = UIColor.black.cgColor
+        layer.borderWidth = 2
         imageView?.contentMode = .scaleAspectFill
         dropShadow()
     }

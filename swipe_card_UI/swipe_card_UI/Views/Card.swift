@@ -14,12 +14,6 @@ class Card : UIView {
     
     var nextCardView : Card?    // Link to linked list
     var delegate : CardDelegate?
-    
-    // V baad
-    fileprivate var imageView = UIImageView()
-    fileprivate let informationLabel = UILabel()
-    fileprivate let swipeThreshold: CGFloat = 120
-    
     var cardViewModel: CardViewModel! {
         didSet{
             imageView.backgroundColor = cardViewModel.backgroundColour
@@ -28,6 +22,10 @@ class Card : UIView {
             imageView.image = cardViewModel.image
         }
     }
+    
+    fileprivate var imageView = UIImageView()
+    fileprivate let informationLabel = UILabel()
+    fileprivate let swipeThreshold: CGFloat = 120
     
     // MARK: - Init
     
@@ -41,6 +39,27 @@ class Card : UIView {
     }
     
     // MARK: - Handlers
+    
+    fileprivate func setupUI() {
+        addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handlePan)))
+        layer.cornerRadius = 25
+        layer.borderColor = UIColor.black.cgColor
+        layer.borderWidth = 4
+        clipsToBounds = true
+        
+        addSubview(imageView)
+        imageView.clipsToBounds = true
+        imageView.fillSuperview()
+        imageView.contentMode = .scaleAspectFit
+        
+        addSubview(informationLabel)
+        informationLabel.translatesAutoresizingMaskIntoConstraints = false
+        informationLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant:  16).isActive = true
+        informationLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant:  -16).isActive = true
+        informationLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant:  -16).isActive = true
+        informationLabel.textColor = .white
+        informationLabel.numberOfLines = 0
+    }
     
     @objc fileprivate func handlePan(gesture: UIPanGestureRecognizer) {
         switch gesture.state {
@@ -57,32 +76,9 @@ class Card : UIView {
         }
     }
     
-    fileprivate func setupUI() {
-        
-        addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handlePan)))
-        layer.cornerRadius = 25
-        clipsToBounds = true
-        
-        addSubview(imageView)
-        imageView.clipsToBounds = true
-        imageView.fillSuperview()
-        imageView.contentMode = .scaleAspectFit
-        
-        addSubview(informationLabel)
-        informationLabel.translatesAutoresizingMaskIntoConstraints = false
-        informationLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant:  16).isActive = true
-        informationLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant:  -16).isActive = true
-        informationLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant:  -16).isActive = true
-        informationLabel.textColor = .white
-        informationLabel.numberOfLines = 0
-        
-    }
-    
     fileprivate func handleEnded(_ gesture: UIPanGestureRecognizer) {
-        
         let translationDirection: CGFloat = gesture.translation(in: nil).x > 0 ? 1 : -1
         let shouldDismissCard = abs(gesture.translation(in: nil).x) > swipeThreshold
-        
         if shouldDismissCard {
             if translationDirection == 1 {
                 self.delegate?.handleLike()
@@ -98,15 +94,9 @@ class Card : UIView {
     
     fileprivate func handleChanged(_ gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: nil)
-        
-        // Radian to degrees
         let degrees : CGFloat = translation.x / 20
         let angle = degrees * .pi / 180
-        
-        // Get rotation
         let rotationalTransform = CGAffineTransform(rotationAngle: angle)
-        
-        // Full transform
         self.transform = rotationalTransform.translatedBy(x: translation.x, y: translation.y)
     }
     

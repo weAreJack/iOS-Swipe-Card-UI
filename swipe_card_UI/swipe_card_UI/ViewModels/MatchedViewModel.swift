@@ -8,26 +8,22 @@
 
 import UIKit
 
-class MatchedViewModel {
+struct MatchedViewModel {
     
     // MARK: - Properties
     
     let currentUserImage : UIImage
     let currentUserBackgroundColour : UIColor
-    
     let matchedCardImage : UIImage
     let matchedCardBackgroundColour : UIColor
     
     // MARK: - Init
     
     init(user: Person, card: Card) {
-        
-        currentUserImage = user.image ?? UIImage() // Add placeholder image
+        currentUserImage = user.image ?? #imageLiteral(resourceName: "placeholder")
         currentUserBackgroundColour = .purple
-        
         matchedCardImage = card.cardViewModel.image
         matchedCardBackgroundColour = card.cardViewModel.backgroundColour
-    
     }
     
     

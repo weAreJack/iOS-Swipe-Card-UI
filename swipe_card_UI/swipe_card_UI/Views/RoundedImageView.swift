@@ -24,10 +24,12 @@ class RoundedImageView : UIImageView {
     // MARK: - Handlers
     
     fileprivate func setupUI() {
+        
         contentMode = .scaleAspectFit
         clipsToBounds = true
         layer.cornerRadius = 70
         layer.borderWidth = 2
         layer.borderColor = UIColor.white.cgColor
+        
     }
 }

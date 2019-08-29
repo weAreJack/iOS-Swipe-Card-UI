@@ -23,19 +23,16 @@ class Pet : ProducesCardViewModel {
     // MARK: - Init
     
     init(dictionary: [String : Any]) {
-        
         self.animal = dictionary["animal"] as? String
         self.name = dictionary["name"] as? String
         self.age = dictionary["age"] as? Int
         self.hometown = dictionary["hometown"] as? String
         self.image = dictionary["image"] as? UIImage
-        
     }
     
     // MARK: - Handlers
     
     func toCardViewModel() -> CardViewModel {
-        
         let attributedText = NSMutableAttributedString(string: animal ?? "", attributes: [.font : UIFont.boldSystemFont(ofSize: 24)])
         
         let nameString = NSAttributedString(string: "\n\(name ?? "")" , attributes: [.font : UIFont.systemFont(ofSize: 24)])
