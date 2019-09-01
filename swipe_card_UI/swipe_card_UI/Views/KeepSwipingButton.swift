@@ -26,7 +26,7 @@ class KeepSwipingButton: UIButton {
         let cornerRadius = rect.height/2
         let gradientLayer = CAGradientLayer()
         let leftColour = UIColor.colour1.cgColor
-        let rightcolour = UIColor.colour5.cgColor
+        let rightcolour = UIColor.colour2.cgColor
         
         gradientLayer.colors = [leftColour, rightcolour]
         gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)

@@ -32,7 +32,7 @@ class HomeController: UIViewController {
                                    "profession" : "Developer",
                                    "relationshipStatus" : "Single",
                                    "hometown" : "Sheffield",
-                                   "image" : #imageLiteral(resourceName: "2")])
+                                   "image" : #imageLiteral(resourceName: "person")])
     
     var previousCard : Card?
     var topCard : Card?
@@ -41,50 +41,50 @@ class HomeController: UIViewController {
                                       "profession" : "Lawyer",
                                       "relationshipStatus" : "Single",
                                       "hometown" : "Leeds",
-                                      "image" : #imageLiteral(resourceName: "2")]),
+                                      "image" : #imageLiteral(resourceName: "person")]),
                   Person(dictionary: ["name" : "John",
                                       "age" : 23,
                                       "profession" : "Designer",
                                       "relationshipStatus" : "Married",
                                       "hometown" : "London",
-                                      "image" : #imageLiteral(resourceName: "3")])]
+                                      "image" : #imageLiteral(resourceName: "person")])]
     
     var cars = [Car(dictionary: ["make" : "Ford",
                                  "model" : "Model E",
                                  "year" : 2015,
                                  "mileage" : 20000,
                                  "price" : 12450,
-                                 "image" : #imageLiteral(resourceName: "2")]),
+                                 "image" : #imageLiteral(resourceName: "car")]),
                 Car(dictionary: ["make" : "BMW",
                                  "model" : "5 Series",
                                  "year" : 2018,
                                  "mileage" : 5000,
                                  "price" : 22750,
-                                 "image" : #imageLiteral(resourceName: "2")])]
+                                 "image" : #imageLiteral(resourceName: "car")])]
     
     var pets = [Pet(dictionary: ["animal" : "Dog",
                                  "name" : "Skip",
                                  "age" : 6,
                                  "hometown" : "Manchester",
-                                 "image" : #imageLiteral(resourceName: "1")]),
+                                 "image" : #imageLiteral(resourceName: "dog")]),
                 Pet(dictionary: ["animal" : "Cat",
                                  "name" : "Terrance",
                                  "age" : 4,
                                  "hometown" : "York",
-                                 "image" : #imageLiteral(resourceName: "1")])]
+                                 "image" : #imageLiteral(resourceName: "cat")])]
     
     var houses = [House(dictionary: ["address" : "10 Blue Roqd",
                                      "type" : "Semi-Detached",
                                      "numberOfBedrooms" : 3,
                                      "numberOfBathrooms" : 2,
                                      "price" : 125000,
-                                     "image" : #imageLiteral(resourceName: "3")]),
+                                     "image" : #imageLiteral(resourceName: "house")]),
                   House(dictionary: ["address" : "20 Red Road",
                                      "type" : "Detached",
                                      "numberOfBedrooms" : 5,
                                      "numberOfBathrooms" : 3,
                                      "price" : 355000,
-                                     "image" : #imageLiteral(resourceName: "3")])]
+                                     "image" : #imageLiteral(resourceName: "house")])]
     
     lazy var bottomControls : BottomControls = {
         let controls = BottomControls()
