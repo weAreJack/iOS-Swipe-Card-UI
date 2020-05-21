@@ -7,4 +7,4 @@ This project demonstrates how to produce and manage swipable cards using the MVV
 <img src="https://github.com/jack-a-smith/iOS_swipe_card_UI/blob/master/readme_images/home.png" width="200"> &ensp; <img src="https://github.com/jack-a-smith/iOS_swipe_card_UI/blob/master/readme_images/swipe_left.png" width="200"> &ensp; <img src="https://github.com/jack-a-smith/iOS_swipe_card_UI/blob/master/readme_images/swipe_right.png" width="200"> &ensp; <img src="https://github.com/jack-a-smith/iOS_swipe_card_UI/blob/master/readme_images/match.png" width="200">
 </p>
 
-This project is developed programmatically, without the use of storyboards. Demonstrates the use of the MVVM architecture for a more complex UI, and incorporates some keyframed animation for adding more exciting visal elements to the user experience.
+This project is developed programmatically, without the use of storyboards. Demonstrates the use of the MVVM design pattern for a more complex UI, and incorporates some keyframed animation for adding more exciting visal elements to the user experience.
