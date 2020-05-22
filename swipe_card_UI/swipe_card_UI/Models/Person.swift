@@ -8,46 +8,56 @@
 
 import UIKit
 
-class Person : ProducesCardViewModel {
+class Person: Post, ProducesCardViewModel {
     
     // MARK: - Properties
     
-    let backgroundColour = UIColor.colour5
+    override var backgroundColour: UIColor {
+        return UIColor.colour5
+    }
     
-    var name : String?
-    var age : Int?
-    var profession : String?
-    var relationshipStatus : String?
-    var hometown : String?
-    var image : UIImage?
+    private var name: String
+    private var age: Int
+    private var profession: String
+    private var relationshipStatus: String
+    private var hometown: String
+    
+    private let FirestoreKey_name = "name"
+    private let FirestoreKey_age = "age"
+    private let FirestoreKey_profession = "profession"
+    private let FirestoreKey_relationshipStatus = "relationshipStatus"
+    private let FirestoreKey_hometown = "hometown"
     
     // MARK: - Init
     
-    init(dictionary: [String : Any]) {
-        self.name = dictionary["name"] as? String
-        self.age = dictionary["age"] as? Int
-        self.profession = dictionary["profession"] as? String
-        self.relationshipStatus = dictionary["relationshipStatus"] as? String
-        self.hometown = dictionary["hometown"] as? String
-        self.image = dictionary["image"] as? UIImage
+    override init(firestoreData: [String: Any]) {
+        self.name = firestoreData[FirestoreKey_name] as! String
+        self.age = firestoreData[FirestoreKey_age] as! Int
+        self.profession = firestoreData[FirestoreKey_profession] as! String
+        self.relationshipStatus = firestoreData[FirestoreKey_relationshipStatus] as! String
+        self.hometown = firestoreData[FirestoreKey_hometown] as! String
+        super.init(firestoreData: firestoreData)
     }
     
-    // MARK: - Handlers
+    // MARK: - Methods
     
     func toCardViewModel() -> CardViewModel {
-        let attributedText = NSMutableAttributedString(string: name ?? "", attributes: [.font : UIFont.boldSystemFont(ofSize: 24)])
+        let attributedText = NSMutableAttributedString(string: self.name, attributes: [.font: UIFont.boldSystemFont(ofSize: 24)])
         
-        let ageString = NSAttributedString(string: "\n\(age ?? 18)" , attributes: [.font : UIFont.systemFont(ofSize: 24)])
-        let professionString = NSAttributedString(string: "\n\(profession ?? "")" , attributes: [.font : UIFont.systemFont(ofSize: 20)])
-        let relationshipStatusString = NSAttributedString(string: "\n\(relationshipStatus ?? "")" , attributes: [.font : UIFont.systemFont(ofSize: 20)])
-        let hometownString = NSAttributedString(string: "\n\(hometown ?? "")" , attributes: [.font : UIFont.systemFont(ofSize: 20)])
+        let ageString = NSAttributedString(string: "\n\(self.age)" , attributes: [.font: UIFont.systemFont(ofSize: 24)])
+        let professionString = NSAttributedString(string: "\n\(self.profession)" , attributes: [.font: UIFont.systemFont(ofSize: 20)])
+        let relationshipStatusString = NSAttributedString(string: "\n\(self.relationshipStatus)" , attributes: [.font: UIFont.systemFont(ofSize: 20)])
+        let hometownString = NSAttributedString(string: "\n\(self.hometown)" , attributes: [.font: UIFont.systemFont(ofSize: 20)])
         
         attributedText.append(ageString)
         attributedText.append(professionString)
         attributedText.append(relationshipStatusString)
         attributedText.append(hometownString)
         
-        let cardViewModel = CardViewModel(image: image ?? UIImage(), backgroundColour: backgroundColour, attributedIntro: attributedText, textAlignment: .left)
+        let cardViewModel = CardViewModel(imageUrl: self.imageUrl,
+                                          backgroundColour: self.backgroundColour,
+                                          attributedIntro: attributedText,
+                                          textAlignment: .left)
         
         return cardViewModel
     }

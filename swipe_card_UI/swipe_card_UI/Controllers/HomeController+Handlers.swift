@@ -1,5 +1,5 @@
 //
-//  HomeController+Handlers.swift
+//  HomeController+Methods.swift
 //  swipe_card_UI
 //
 //  Created by Jack Smith on 28/08/2019.

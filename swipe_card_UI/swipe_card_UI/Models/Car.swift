@@ -8,48 +8,57 @@
 
 import UIKit
 
-class Car : ProducesCardViewModel {
+class Car: Post, ProducesCardViewModel {
     
     // MARK: - Properties
     
-    let backgroundColour = UIColor.colour1
+    override var backgroundColour: UIColor {
+        return UIColor.colour1
+    }
     
-    var make : String?
-    var model : String?
-    var year : Int?
-    var mileage : Int?
-    var price : Int?
-    var image : UIImage?
+    private var make: String
+    private var model: String
+    private var year: Int
+    private var mileage: Int
+    private var price: Int
+    
+    private let FirestoreKey_make = "make"
+    private let FirestoreKey_model = "model"
+    private let FirestoreKey_year = "year"
+    private let FirestoreKey_mileage = "mileage"
+    private let FirestoreKey_price = "price"
     
     // MARK: - Init
     
-    init(dictionary: [String : Any]) {
-        self.make = dictionary["make"] as? String
-        self.model = dictionary["model"] as? String
-        self.year = dictionary["age"] as? Int
-        self.mileage = dictionary["mileage"] as? Int
-        self.price = dictionary["price"] as? Int
-        self.image = dictionary["image"] as? UIImage
+    override init(firestoreData: [String: Any]) {
+        self.make = firestoreData[FirestoreKey_make] as! String
+        self.model = firestoreData[FirestoreKey_model] as! String
+        self.year = firestoreData[FirestoreKey_year] as! Int
+        self.mileage = firestoreData[FirestoreKey_mileage] as! Int
+        self.price = firestoreData[FirestoreKey_price] as! Int
+        super.init(firestoreData: firestoreData)
     }
     
-    // MARK: - Handlers
+    // MARK: - Methods
     
     func toCardViewModel() -> CardViewModel {
-        let attributedText = NSMutableAttributedString(string: make ?? "", attributes: [.font : UIFont.boldSystemFont(ofSize: 24)])
+        let attributedText = NSMutableAttributedString(string: self.make, attributes: [.font: UIFont.boldSystemFont(ofSize: 24)])
         
-        let modelString = NSAttributedString(string: "\n\(model ?? "")" , attributes: [.font : UIFont.systemFont(ofSize: 24)])
-        let ageString = NSAttributedString(string: "\n\(year ?? 2019)" , attributes: [.font : UIFont.systemFont(ofSize: 20)])
-        let mileageString = NSAttributedString(string: "\n\(mileage ?? 0) miles" , attributes: [.font : UIFont.systemFont(ofSize: 20)])
-        let priceString = NSAttributedString(string: "\n£\(price ?? 10000)" , attributes: [.font : UIFont.systemFont(ofSize: 20)])
+        let modelString = NSAttributedString(string: "\n\(self.model)", attributes: [.font: UIFont.systemFont(ofSize: 24)])
+        let ageString = NSAttributedString(string: "\n\(self.year)", attributes: [.font: UIFont.systemFont(ofSize: 20)])
+        let mileageString = NSAttributedString(string: "\n\(self.mileage) miles", attributes: [.font: UIFont.systemFont(ofSize: 20)])
+        let priceString = NSAttributedString(string: "\n£\(self.price)", attributes: [.font: UIFont.systemFont(ofSize: 20)])
         
         attributedText.append(modelString)
         attributedText.append(ageString)
         attributedText.append(mileageString)
         attributedText.append(priceString)
         
-        let cardViewModel = CardViewModel(image: image ?? UIImage(), backgroundColour: backgroundColour, attributedIntro: attributedText, textAlignment: .right)
+        let cardViewModel = CardViewModel(imageUrl: self.imageUrl,
+                                          backgroundColour: self.backgroundColour,
+                                          attributedIntro: attributedText,
+                                          textAlignment: .right)
         
         return cardViewModel
     }
-    
 }

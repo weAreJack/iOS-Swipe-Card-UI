@@ -1,0 +1,22 @@
+target 'swipe_card_UI' do
+
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for swipe_card_UI
+
+  pod 'Firebase/Storage'
+  pod 'Firebase/Firestore'
+
+  pod 'SDWebImage'
+
+  target 'swipe_card_UITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'swipe_card_UIUITests' do
+    # Pods for testing
+  end
+
+end

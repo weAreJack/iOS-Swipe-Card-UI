@@ -19,7 +19,7 @@ class Card : UIView {
             imageView.backgroundColor = cardViewModel.backgroundColour
             informationLabel.attributedText = cardViewModel.attributedIntro
             informationLabel.textAlignment = cardViewModel.textAlignment
-            imageView.image = cardViewModel.image
+//            imageView.image = cardViewModel.image
         }
     }
     
@@ -38,7 +38,7 @@ class Card : UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Handlers
+    // MARK: - Methods
     
     fileprivate func setupUI() {
         addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handlePan)))

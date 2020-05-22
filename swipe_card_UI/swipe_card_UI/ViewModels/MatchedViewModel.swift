@@ -12,19 +12,17 @@ struct MatchedViewModel {
     
     // MARK: - Properties
     
-    let currentUserImage : UIImage
-    let currentUserBackgroundColour : UIColor
-    let matchedCardImage : UIImage
-    let matchedCardBackgroundColour : UIColor
+    let currentUserImageUrl: String
+    let currentUserBackgroundColour: UIColor
+    let matchedCardImageUrl: String
+    let matchedCardBackgroundColour: UIColor
     
     // MARK: - Init
     
     init(user: Person, card: Card) {
-        currentUserImage = user.image ?? #imageLiteral(resourceName: "placeholder")
+        currentUserImageUrl = user.imageUrl
         currentUserBackgroundColour = .purple
-        matchedCardImage = card.cardViewModel.image
+        matchedCardImageUrl = card.cardViewModel.imageUrl
         matchedCardBackgroundColour = card.cardViewModel.backgroundColour
     }
-    
-    
 }

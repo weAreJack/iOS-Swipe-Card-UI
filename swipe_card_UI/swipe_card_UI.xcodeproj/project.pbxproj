@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		170C1F6E9B40D4CFAE5EED7B /* Pods_swipe_card_UI_swipe_card_UIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5392C5E3DDA1F763860326D7 /* Pods_swipe_card_UI_swipe_card_UIUITests.framework */; };
+		940E56CD598B6A6CAA696D60 /* Pods_swipe_card_UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E417B50BE79C846B57B449D /* Pods_swipe_card_UI.framework */; };
+		9F75AE300679BD95A3A6B63F /* Pods_swipe_card_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A9CDD1DD68DC79EFBDEDB1 /* Pods_swipe_card_UITests.framework */; };
 		A0414A5D23143CC8002DE53C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414A5C23143CC8002DE53C /* AppDelegate.swift */; };
 		A0414A6423143CC9002DE53C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0414A6323143CC9002DE53C /* Assets.xcassets */; };
 		A0414A7223143CC9002DE53C /* swipe_card_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414A7123143CC9002DE53C /* swipe_card_UITests.swift */; };
@@ -29,6 +32,7 @@
 		A0414AB523166A22002DE53C /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414AB423166A22002DE53C /* RoundedImageView.swift */; };
 		A0414AB72316CC39002DE53C /* HomeController+Handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414AB62316CC39002DE53C /* HomeController+Handlers.swift */; };
 		A0414ACB23173657002DE53C /* MatchView+Handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414ACA23173657002DE53C /* MatchView+Handlers.swift */; };
+		A0C2E61B247881B5001399F2 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C2E61A247881B5001399F2 /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E417B50BE79C846B57B449D /* Pods_swipe_card_UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swipe_card_UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5392C5E3DDA1F763860326D7 /* Pods_swipe_card_UI_swipe_card_UIUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swipe_card_UI_swipe_card_UIUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92AD2B2735AC122D73D67090 /* Pods-swipe_card_UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swipe_card_UITests.debug.xcconfig"; path = "Target Support Files/Pods-swipe_card_UITests/Pods-swipe_card_UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A0414A5923143CC8002DE53C /* swipe_card_UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swipe_card_UI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0414A5C23143CC8002DE53C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0414A6323143CC9002DE53C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -77,6 +84,13 @@
 		A0414AB423166A22002DE53C /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		A0414AB62316CC39002DE53C /* HomeController+Handlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeController+Handlers.swift"; sourceTree = "<group>"; };
 		A0414ACA23173657002DE53C /* MatchView+Handlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchView+Handlers.swift"; sourceTree = "<group>"; };
+		A083959A9F134A85D08FB1E7 /* Pods-swipe_card_UI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swipe_card_UI.debug.xcconfig"; path = "Target Support Files/Pods-swipe_card_UI/Pods-swipe_card_UI.debug.xcconfig"; sourceTree = "<group>"; };
+		A0C2E61A247881B5001399F2 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		B416B0CE6FB2606D48D340E8 /* Pods-swipe_card_UI-swipe_card_UIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swipe_card_UI-swipe_card_UIUITests.release.xcconfig"; path = "Target Support Files/Pods-swipe_card_UI-swipe_card_UIUITests/Pods-swipe_card_UI-swipe_card_UIUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B70284FA7E6BCD52CE020EE7 /* Pods-swipe_card_UI-swipe_card_UIUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swipe_card_UI-swipe_card_UIUITests.debug.xcconfig"; path = "Target Support Files/Pods-swipe_card_UI-swipe_card_UIUITests/Pods-swipe_card_UI-swipe_card_UIUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D745A9AD7B83691A24D03801 /* Pods-swipe_card_UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swipe_card_UITests.release.xcconfig"; path = "Target Support Files/Pods-swipe_card_UITests/Pods-swipe_card_UITests.release.xcconfig"; sourceTree = "<group>"; };
+		D96D750FB1AD4818DC609734 /* Pods-swipe_card_UI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swipe_card_UI.release.xcconfig"; path = "Target Support Files/Pods-swipe_card_UI/Pods-swipe_card_UI.release.xcconfig"; sourceTree = "<group>"; };
+		E0A9CDD1DD68DC79EFBDEDB1 /* Pods_swipe_card_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swipe_card_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				940E56CD598B6A6CAA696D60 /* Pods_swipe_card_UI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F75AE300679BD95A3A6B63F /* Pods_swipe_card_UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				170C1F6E9B40D4CFAE5EED7B /* Pods_swipe_card_UI_swipe_card_UIUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +128,8 @@
 				A0414A7023143CC9002DE53C /* swipe_card_UITests */,
 				A0414A7B23143CC9002DE53C /* swipe_card_UIUITests */,
 				A0414A5A23143CC8002DE53C /* Products */,
+				EEC5C494EBEA804970B44309 /* Pods */,
+				AA129A384E75F2A2D29F807A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -178,6 +197,7 @@
 		A0414A8C23143F51002DE53C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A0C2E61A247881B5001399F2 /* Post.swift */,
 				A0414A93231440E2002DE53C /* Car.swift */,
 				A0414A9523144105002DE53C /* Person.swift */,
 				A0414A992314412B002DE53C /* Pet.swift */,
@@ -210,6 +230,29 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		AA129A384E75F2A2D29F807A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2E417B50BE79C846B57B449D /* Pods_swipe_card_UI.framework */,
+				5392C5E3DDA1F763860326D7 /* Pods_swipe_card_UI_swipe_card_UIUITests.framework */,
+				E0A9CDD1DD68DC79EFBDEDB1 /* Pods_swipe_card_UITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EEC5C494EBEA804970B44309 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A083959A9F134A85D08FB1E7 /* Pods-swipe_card_UI.debug.xcconfig */,
+				D96D750FB1AD4818DC609734 /* Pods-swipe_card_UI.release.xcconfig */,
+				B70284FA7E6BCD52CE020EE7 /* Pods-swipe_card_UI-swipe_card_UIUITests.debug.xcconfig */,
+				B416B0CE6FB2606D48D340E8 /* Pods-swipe_card_UI-swipe_card_UIUITests.release.xcconfig */,
+				92AD2B2735AC122D73D67090 /* Pods-swipe_card_UITests.debug.xcconfig */,
+				D745A9AD7B83691A24D03801 /* Pods-swipe_card_UITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -217,9 +260,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0414A8123143CC9002DE53C /* Build configuration list for PBXNativeTarget "swipe_card_UI" */;
 			buildPhases = (
+				1B0CC1B32B330F8B168B1D9E /* [CP] Check Pods Manifest.lock */,
 				A0414A5523143CC8002DE53C /* Sources */,
 				A0414A5623143CC8002DE53C /* Frameworks */,
 				A0414A5723143CC8002DE53C /* Resources */,
+				13AF7B2AA092398EDFA4F5DA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -234,6 +279,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0414A8423143CC9002DE53C /* Build configuration list for PBXNativeTarget "swipe_card_UITests" */;
 			buildPhases = (
+				C993791BD3F02FDC9C3950EB /* [CP] Check Pods Manifest.lock */,
 				A0414A6923143CC9002DE53C /* Sources */,
 				A0414A6A23143CC9002DE53C /* Frameworks */,
 				A0414A6B23143CC9002DE53C /* Resources */,
@@ -252,9 +298,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0414A8723143CC9002DE53C /* Build configuration list for PBXNativeTarget "swipe_card_UIUITests" */;
 			buildPhases = (
+				3337EEEAC81784BD58DBB6CE /* [CP] Check Pods Manifest.lock */,
 				A0414A7423143CC9002DE53C /* Sources */,
 				A0414A7523143CC9002DE53C /* Frameworks */,
 				A0414A7623143CC9002DE53C /* Resources */,
+				55E5A47E56CBCB83A771504B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -334,6 +382,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		13AF7B2AA092398EDFA4F5DA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-swipe_card_UI/Pods-swipe_card_UI-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-swipe_card_UI/Pods-swipe_card_UI-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-swipe_card_UI/Pods-swipe_card_UI-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1B0CC1B32B330F8B168B1D9E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-swipe_card_UI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3337EEEAC81784BD58DBB6CE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-swipe_card_UI-swipe_card_UIUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		55E5A47E56CBCB83A771504B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-swipe_card_UI-swipe_card_UIUITests/Pods-swipe_card_UI-swipe_card_UIUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-swipe_card_UI-swipe_card_UIUITests/Pods-swipe_card_UI-swipe_card_UIUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-swipe_card_UI-swipe_card_UIUITests/Pods-swipe_card_UI-swipe_card_UIUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C993791BD3F02FDC9C3950EB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-swipe_card_UITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A0414A5523143CC8002DE53C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -355,6 +506,7 @@
 				A0414AAD231477E8002DE53C /* UIColorExtension.swift in Sources */,
 				A0414AB523166A22002DE53C /* RoundedImageView.swift in Sources */,
 				A0414AA623145C9A002DE53C /* KeepSwipingButton.swift in Sources */,
+				A0C2E61B247881B5001399F2 /* Post.swift in Sources */,
 				A0414A9623144105002DE53C /* Person.swift in Sources */,
 				A0414AA223145C7D002DE53C /* MatchView.swift in Sources */,
 				A0414AB72316CC39002DE53C /* HomeController+Handlers.swift in Sources */,
@@ -511,6 +663,7 @@
 		};
 		A0414A8223143CC9002DE53C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A083959A9F134A85D08FB1E7 /* Pods-swipe_card_UI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -529,6 +682,7 @@
 		};
 		A0414A8323143CC9002DE53C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D96D750FB1AD4818DC609734 /* Pods-swipe_card_UI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -547,6 +701,7 @@
 		};
 		A0414A8523143CC9002DE53C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92AD2B2735AC122D73D67090 /* Pods-swipe_card_UITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -568,6 +723,7 @@
 		};
 		A0414A8623143CC9002DE53C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D745A9AD7B83691A24D03801 /* Pods-swipe_card_UITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -589,6 +745,7 @@
 		};
 		A0414A8823143CC9002DE53C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B70284FA7E6BCD52CE020EE7 /* Pods-swipe_card_UI-swipe_card_UIUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -609,6 +766,7 @@
 		};
 		A0414A8923143CC9002DE53C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B416B0CE6FB2606D48D340E8 /* Pods-swipe_card_UI-swipe_card_UIUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

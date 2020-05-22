@@ -17,7 +17,7 @@ class KeepSwipingButton: UIButton {
         setupUI(rect)
     }
     
-    // MARK: - Handlers
+    // MARK: - Methods
     
     fileprivate func setupUI(_ rect: CGRect) {
         setTitle("Keep Swiping", for: .normal)

@@ -15,9 +15,9 @@ class MatchView: UIView {
     var delegate : MatchViewDelegate?
     var viewModel : MatchedViewModel? {
         didSet {
-            currentUserImageView.image = viewModel?.currentUserImage
+//            currentUserImageView.image = viewModel?.currentUserImage
             currentUserImageView.backgroundColor = viewModel?.currentUserBackgroundColour
-            matchedCardImageView.image = viewModel?.matchedCardImage
+//            matchedCardImageView.image = viewModel?.matchedCardImage
             matchedCardImageView.backgroundColor = viewModel?.matchedCardBackgroundColour
         }
     }

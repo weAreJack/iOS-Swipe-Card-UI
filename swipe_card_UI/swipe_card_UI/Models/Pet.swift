@@ -8,45 +8,52 @@
 
 import UIKit
 
-class Pet : ProducesCardViewModel {
+class Pet: Post, ProducesCardViewModel {
     
     // MARK: - Properties
     
-    let backgroundColour = UIColor.colour3
+    override var backgroundColour: UIColor {
+        return UIColor.colour3
+    }
     
-    var animal : String?
-    var name : String?
-    var age : Int?
-    var hometown : String?
-    var image : UIImage?
+    private var animal: String
+    private var name: String
+    private var age: Int
+    private var hometown: String
+    
+    private let FirestoreKey_animal = "animal"
+    private let FirestoreKey_name = "name"
+    private let FirestoreKey_age = "age"
+    private let FirestoreKey_hometown = "hometown"
     
     // MARK: - Init
     
-    init(dictionary: [String : Any]) {
-        self.animal = dictionary["animal"] as? String
-        self.name = dictionary["name"] as? String
-        self.age = dictionary["age"] as? Int
-        self.hometown = dictionary["hometown"] as? String
-        self.image = dictionary["image"] as? UIImage
+    override init(firestoreData: [String : Any]) {
+        self.animal = firestoreData[FirestoreKey_animal] as! String
+        self.name = firestoreData[FirestoreKey_name] as! String
+        self.age = firestoreData[FirestoreKey_age] as! Int
+        self.hometown = firestoreData[FirestoreKey_hometown] as! String
+        super.init(firestoreData: firestoreData)
     }
     
-    // MARK: - Handlers
+    // MARK: - Methods
     
     func toCardViewModel() -> CardViewModel {
-        let attributedText = NSMutableAttributedString(string: animal ?? "", attributes: [.font : UIFont.boldSystemFont(ofSize: 24)])
+        let attributedText = NSMutableAttributedString(string: self.animal, attributes: [.font : UIFont.boldSystemFont(ofSize: 24)])
         
-        let nameString = NSAttributedString(string: "\n\(name ?? "")" , attributes: [.font : UIFont.systemFont(ofSize: 24)])
-        let ageString = NSAttributedString(string: "\n\(age ?? 0)" , attributes: [.font : UIFont.systemFont(ofSize: 20)])
-        let hometownString = NSAttributedString(string: "\n\(hometown ?? "")" , attributes: [.font : UIFont.systemFont(ofSize: 20)])
+        let nameString = NSAttributedString(string: "\n\(self.name)", attributes: [.font : UIFont.systemFont(ofSize: 24)])
+        let ageString = NSAttributedString(string: "\n\(self.age)", attributes: [.font : UIFont.systemFont(ofSize: 20)])
+        let hometownString = NSAttributedString(string: "\n\(self.hometown)" , attributes: [.font : UIFont.systemFont(ofSize: 20)])
         
         attributedText.append(nameString)
         attributedText.append(ageString)
         attributedText.append(hometownString)
         
-        let cardViewModel = CardViewModel(image: image ?? UIImage(), backgroundColour: backgroundColour, attributedIntro: attributedText, textAlignment: .left)
+        let cardViewModel = CardViewModel(imageUrl: self.imageUrl,
+                                          backgroundColour: self.backgroundColour,
+                                          attributedIntro: attributedText,
+                                          textAlignment: .left)
         
         return cardViewModel
-        
     }
-    
 }
