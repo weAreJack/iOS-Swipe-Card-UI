@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct MatchedViewModel {
+class MatchedViewModel {
     
     // MARK: - Properties
     
@@ -20,9 +20,9 @@ struct MatchedViewModel {
     // MARK: - Init
     
     init(user: Person, card: Card) {
-        currentUserImageUrl = user.imageUrl
-        currentUserBackgroundColour = .purple
-        matchedCardImageUrl = card.viewModel.imageUrl
-        matchedCardBackgroundColour = card.viewModel.backgroundColour
+        self.currentUserImageUrl = user.imageUrl
+        self.currentUserBackgroundColour = .purple
+        self.matchedCardImageUrl = card.viewModel.imageUrl
+        self.matchedCardBackgroundColour = card.viewModel.backgroundColour
     }
 }

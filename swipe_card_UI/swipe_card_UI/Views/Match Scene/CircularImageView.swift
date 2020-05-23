@@ -10,15 +10,16 @@ import UIKit
 
 class CircularImageView: UIImageView {
     
-    override func didMoveToSuperview() {
+    override func layoutSubviews() {
         self.layoutView()
     }
     
     private func layoutView() {
-        contentMode = .scaleAspectFit
-        clipsToBounds = true
-        layer.cornerRadius = self.frame.width/2
-        layer.borderWidth = 2
-        layer.borderColor = UIColor.white.cgColor
+        self.contentMode = .scaleAspectFit
+        self.clipsToBounds = true
+        
+        self.layer.cornerRadius = self.frame.width/2
+        self.layer.borderWidth = 2
+        self.layer.borderColor = UIColor.white.cgColor
     }
 }

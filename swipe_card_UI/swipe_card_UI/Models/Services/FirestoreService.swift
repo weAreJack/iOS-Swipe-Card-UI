@@ -33,39 +33,40 @@ final class FirestoreService {
         let dispatchGroup = DispatchGroup()
         
         dispatchGroup.enter()
-        self.fetchCars { items, error in
-            self.handleFetchResponse(posts: &posts, items: items, error: error, dispatchGroup: dispatchGroup)
+        self.fetchCars { items in
+            self.handleFetchResponse(posts: &posts, items: items, dispatchGroup: dispatchGroup)
         }
         
         dispatchGroup.enter()
-        self.fetchPets { items, error in
-            self.handleFetchResponse(posts: &posts, items: items, error: error, dispatchGroup: dispatchGroup)
+        self.fetchPets { items in
+            self.handleFetchResponse(posts: &posts, items: items, dispatchGroup: dispatchGroup)
         }
         
         dispatchGroup.enter()
-        self.fetchHomes { items, error in
-            self.handleFetchResponse(posts: &posts, items: items, error: error, dispatchGroup: dispatchGroup)
+        self.fetchHomes { items in
+            self.handleFetchResponse(posts: &posts, items: items, dispatchGroup: dispatchGroup)
         }
         
         dispatchGroup.enter()
-        self.fetchPeople { items, error in
-            self.handleFetchResponse(posts: &posts, items: items, error: error, dispatchGroup: dispatchGroup)
+        self.fetchPeople { items in
+            self.handleFetchResponse(posts: &posts, items: items, dispatchGroup: dispatchGroup)
         }
         
         dispatchGroup.notify(queue: .main) {
-            completion(posts)
+            posts.count == .zero ? completion(nil) : completion(posts)
         }
     }
     
-    func fetchCars(completion: @escaping (_ cars: [Car]?, _ error: Error?) -> Void) {
+    func fetchCars(completion: @escaping (_ cars: [Car]?) -> Void) {
         self.firestoreRefrence.collection(self.carsCollectionPath).getDocuments { snapshot, error in
             
-            if let error = error {
-                completion(nil, error)
+            if error != nil {
+                completion(nil)
                 return
             }
             
             guard let snapshot = snapshot else {
+                completion(nil)
                 return
             }
             
@@ -74,19 +75,20 @@ final class FirestoreService {
                 let car = Car(firestoreData: document.data())
                 cars.append(car)
             }
-            completion(cars, nil)
+            completion(cars)
         }
     }
     
-    func fetchHomes(completion: @escaping (_ homes: [Home]?, _ error: Error?) -> Void) {
+    func fetchHomes(completion: @escaping (_ homes: [Home]?) -> Void) {
         self.firestoreRefrence.collection(self.homesCollectionPath).getDocuments { snapshot, error in
             
-            if let error = error {
-                completion(nil, error)
+            if error != nil {
+                completion(nil)
                 return
             }
             
             guard let snapshot = snapshot else {
+                completion(nil)
                 return
             }
             
@@ -95,19 +97,20 @@ final class FirestoreService {
                 let home = Home(firestoreData: document.data())
                 homes.append(home)
             }
-            completion(homes, nil)
+            completion(homes)
         }
     }
     
-    func fetchPeople(completion: @escaping (_ people: [Person]?, _ error: Error?) -> Void) {
+    func fetchPeople(completion: @escaping (_ people: [Person]?) -> Void) {
         self.firestoreRefrence.collection(self.peopleCollectionPath).getDocuments { snapshot, error in
             
-            if let error = error {
-                completion(nil, error)
+            if error != nil {
+                completion(nil)
                 return
             }
             
             guard let snapshot = snapshot else {
+                completion(nil)
                 return
             }
             
@@ -116,19 +119,20 @@ final class FirestoreService {
                 let person = Person(firestoreData: document.data())
                 people.append(person)
             }
-            completion(people, nil)
+            completion(people)
         }
     }
     
-    func fetchPets(completion: @escaping (_ pets: [Pet]?, _ error: Error?) -> Void) {
+    func fetchPets(completion: @escaping (_ pets: [Pet]?) -> Void) {
         self.firestoreRefrence.collection(self.petsCollectionPath).getDocuments { snapshot, error in
             
-            if let error = error {
-                completion(nil, error)
+            if error != nil {
+                completion(nil)
                 return
             }
             
             guard let snapshot = snapshot else {
+                completion(nil)
                 return
             }
             
@@ -137,13 +141,12 @@ final class FirestoreService {
                 let pet = Pet(firestoreData: document.data())
                 pets.append(pet)
             }
-            completion(pets, nil)
+            completion(pets)
         }
     }
     
     private func handleFetchResponse(posts: inout [Post],
                                      items: [Post]?,
-                                     error: Error?,
                                      dispatchGroup: DispatchGroup) {
         
         guard let items = items else {

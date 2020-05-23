@@ -10,19 +10,22 @@ import UIKit
 
 extension HomeController {
     
+    func configureViews() {
+        self.bottomControls.delegate = self
+    }
+    
     func setupUI(){
-        view.backgroundColor = .white
-        navigationController?.navigationBar.isHidden = true
+        self.view.backgroundColor = .white
+        self.navigationController?.navigationBar.isHidden = true
         
-        view.addSubview(mainStackView)
-        view.addSubview(navBar)
-        view.fillSuperview()
+        self.view.addSubview(self.mainStackView)
+        self.view.addSubview(self.navBar)
         
         let layoutGuide = view.safeAreaLayoutGuide
-        navBar.topAnchor.constraint(equalTo: layoutGuide.topAnchor).isActive = true
-        navBar.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor).isActive = true
-        navBar.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor).isActive = true
-        navBar.heightAnchor.constraint(equalToConstant: navBarHeight).isActive = true
+        self.navBar.borderConstraints(topAnchor: layoutGuide.topAnchor,
+                                      leadingAnchor: layoutGuide.leadingAnchor,
+                                      trailingAnchor: layoutGuide.trailingAnchor,
+                                      size: .init(width: CGFloat.zero, height: self.navBarHeight))
         
         mainStackView.topAnchor.constraint(equalTo: navBar.bottomAnchor).isActive = true
         mainStackView.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor).isActive = true
@@ -73,12 +76,13 @@ extension HomeController {
     }
     
     private func presentMatchView(withMatch: Card) {
-        let matchView = MatchView()
-//        matchView.viewModel = MatchedViewModel(user: user, card: withMatch)
+        let matchView = MatchView(viewModel: MatchedViewModel(user: self.user, card: withMatch))
         matchView.delegate = self
-        view.addSubview(matchView)
-        navigationController?.setNavigationBarHidden(true, animated: false)
-        matchView.fillSuperview()
+        
+        self.view.addSubview(matchView)
+        matchView.constraintsEqual(toView: self.view)
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     func setupAllCards() {
@@ -109,30 +113,43 @@ extension HomeController {
         
         self.cardsDeckView.addSubview(card)
         self.cardsDeckView.sendSubviewToBack(card)
-        card.fillSuperview()
+        card.constraintsEqual(toView: self.cardsDeckView)
         
         return card
     }
     
-    @objc func handleRefresh() {
+    private func handleRefresh() {
         if self.topCard == nil {
             self.setupAllCards()
         }
     }
     
-    @objc
-    func handleDislike() {
+    private func handleDislike() {
         self.performSwipeAnimation(translation: -700, angle: -15)
     }
     
-    @objc
-    func handleLike() {
+    private func handleLike() {
         guard let card = topCard else {
             return
         }
         
         self.performSwipeAnimation(translation: 700, angle: 15)
         self.presentMatchView(withMatch: card)
+    }
+}
+
+extension HomeController: BottomControlsDelegate {
+    
+    func bottomControlsDidTapBackButton(bottomControls: BottomControls) {
+        self.handleRefresh()
+    }
+    
+    func bottomControlsDidTapDislikeButton(bottomControls: BottomControls) {
+        self.handleDislike()
+    }
+    
+    func bottomControlsDidTapLikeButton(bottomControls: BottomControls) {
+        self.handleLike()
     }
 }
 
@@ -146,7 +163,7 @@ extension HomeController: CardDelegate, MatchViewDelegate {
         self.handleDislike()
     }
     
-    func didDismissMatchView() {
+    func matchViewDidDismissMatchView(matchView: MatchView) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 }

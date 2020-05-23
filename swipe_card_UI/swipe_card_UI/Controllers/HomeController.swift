@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol MatchViewDelegate {
-    func didDismissMatchView()
-}
-
 class HomeController: UIViewController {
     
     //MARK:- Properties
@@ -20,23 +16,15 @@ class HomeController: UIViewController {
     var topCard: Card?
     var posts = [ProducesCardViewModel]()
     
+    let bottomControls = BottomControls()
     let cardsDeckView = UIView()
     let navBar = NavBar()
     let navBarHeight: CGFloat = 60
     
     let user = Person()
     
-    lazy var bottomControls : BottomControls = {
-        let controls = BottomControls()
-        controls.backButton.addTarget(self, action: #selector(self.handleRefresh), for: .touchUpInside)
-        controls.dislikeButton.addTarget(self, action: #selector(self.handleDislike), for: .touchUpInside)
-        controls.likeButton.addTarget(self, action: #selector(self.handleLike), for: .touchUpInside)
-        controls.heightAnchor.constraint(equalToConstant: 110).isActive = true
-        return controls
-    }()
-    
     lazy var mainStackView : UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [cardsDeckView, bottomControls])
+        let stackView = UIStackView(arrangedSubviews: [self.cardsDeckView, self.bottomControls])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.isLayoutMarginsRelativeArrangement = true
@@ -50,6 +38,7 @@ class HomeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.configureViews()
         self.setupUI()
         self.setupAllCards()
     }

@@ -19,7 +19,7 @@ class KeepSwipingButton: UIButton {
     
     // MARK: - Methods
     
-    fileprivate func setupUI(_ rect: CGRect) {
+    private func setupUI(_ rect: CGRect) {
         setTitle("Keep Swiping", for: .normal)
         setTitleColor(.white, for: .normal)
         
