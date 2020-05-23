@@ -34,29 +34,27 @@ class MatchView: UIView {
     let itsAMatchImageView = UIImageView(image: #imageLiteral(resourceName: "its_a_match_view"))
     let keepSwipingButton = KeepSwipingButton(type: .system)
     let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
-    let currentUserImageView = RoundedImageView(frame: CGRect())
-    let matchedCardImageView = RoundedImageView(frame: CGRect())
+    let currentUserImageView = CircularImageView(frame: CGRect())
+    let matchedCardImageView = CircularImageView(frame: CGRect())
 
     lazy var views = [
-        itsAMatchImageView,
-        descriptionLabel,
-        currentUserImageView,
-        matchedCardImageView,
-        keepSwipingButton
+        self.itsAMatchImageView,
+        self.descriptionLabel,
+        self.currentUserImageView,
+        self.matchedCardImageView,
+        self.keepSwipingButton
     ]
 
     // MARK: - Init
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupBlurView()
-        setupUI()
-        setupAnimations()
+        self.setupBlurView()
+        self.setupUI()
+        self.setupAnimations()
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
 }
-

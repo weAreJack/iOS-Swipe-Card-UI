@@ -8,14 +8,6 @@
 
 import UIKit
 
-// MARK: - Protocols
-
-protocol CardDelegate {
-    func didRemoveCard(card: Card)
-    func handleLike()
-    func handleDislike()
-}
-
 protocol MatchViewDelegate {
     func didDismissMatchView()
 }
@@ -24,19 +16,21 @@ class HomeController: UIViewController {
     
     //MARK:- Properties
     
+    var previousCard: Card?
+    var topCard: Card?
+    var posts = [ProducesCardViewModel]()
+    
     let cardsDeckView = UIView()
     let navBar = NavBar()
     let navBarHeight: CGFloat = 60
     
-    var previousCard: Card?
-    var topCard: Card?
-    var posts = [Post]()
+    let user = Person()
     
     lazy var bottomControls : BottomControls = {
         let controls = BottomControls()
-        controls.backButton.addTarget(self, action: #selector(handleRefresh), for: .touchUpInside)
-        controls.dislikeButton.addTarget(self, action: #selector(handleDislike), for: .touchUpInside)
-        controls.likeButton.addTarget(self, action: #selector(handleLike), for: .touchUpInside)
+        controls.backButton.addTarget(self, action: #selector(self.handleRefresh), for: .touchUpInside)
+        controls.dislikeButton.addTarget(self, action: #selector(self.handleDislike), for: .touchUpInside)
+        controls.likeButton.addTarget(self, action: #selector(self.handleLike), for: .touchUpInside)
         controls.heightAnchor.constraint(equalToConstant: 110).isActive = true
         return controls
     }()
@@ -56,24 +50,7 @@ class HomeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
-        setupAllCards()
+        self.setupUI()
+        self.setupAllCards()
     }
-    
 }
-
-// MARK: - Protocol Implementations
-
-extension HomeController: CardDelegate, MatchViewDelegate {
-    
-    func didDismissMatchView() {
-        navigationController?.setNavigationBarHidden(true, animated: false)
-    }
-    
-    func didRemoveCard(card: Card) {
-        self.topCard?.removeFromSuperview()
-        self.topCard = self.topCard?.nextCardView
-    }
-    
-}
-

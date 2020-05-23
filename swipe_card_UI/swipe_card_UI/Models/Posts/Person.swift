@@ -16,11 +16,11 @@ class Person: Post, ProducesCardViewModel {
         return UIColor.colour5
     }
     
-    private var name: String
-    private var age: Int
-    private var profession: String
-    private var relationshipStatus: String
-    private var hometown: String
+    private var name: String = "Jack"
+    private var age: Int = 26
+    private var profession: String = "Developer"
+    private var relationshipStatus: String = "Single"
+    private var hometown: String = "Hull"
     
     private let FirestoreKey_name = "name"
     private let FirestoreKey_age = "age"
@@ -29,6 +29,10 @@ class Person: Post, ProducesCardViewModel {
     private let FirestoreKey_hometown = "hometown"
     
     // MARK: - Init
+    
+    override init() {
+        super.init()
+    }
     
     override init(firestoreData: [String: Any]) {
         self.name = firestoreData[FirestoreKey_name] as! String

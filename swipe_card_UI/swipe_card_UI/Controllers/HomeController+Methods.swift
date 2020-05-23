@@ -45,7 +45,7 @@ extension HomeController {
         statusBarCover.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
     }
     
-    fileprivate func performSwipeAnimation(translation: CGFloat, angle: CGFloat) {
+    private func performSwipeAnimation(translation: CGFloat, angle: CGFloat) {
         let duration = 0.5
         
         let translationAnimation = CABasicAnimation(keyPath: "position.x")
@@ -60,7 +60,7 @@ extension HomeController {
         rotationAnimation.duration = duration
         
         let card = topCard
-        topCard = card?.nextCardView
+        topCard = card?.nextCard
         
         CATransaction.setCompletionBlock {
             card?.removeFromSuperview()
@@ -72,9 +72,9 @@ extension HomeController {
         CATransaction.commit()
     }
     
-    fileprivate func presentMatchView(withMatch: Card) {
+    private func presentMatchView(withMatch: Card) {
         let matchView = MatchView()
-        matchView.viewModel = MatchedViewModel(user: user, card: withMatch)
+//        matchView.viewModel = MatchedViewModel(user: user, card: withMatch)
         matchView.delegate = self
         view.addSubview(matchView)
         navigationController?.setNavigationBarHidden(true, animated: false)
@@ -82,89 +82,71 @@ extension HomeController {
     }
     
     func setupAllCards() {
-        people.forEach { (person) in
-            let card = setupCardFromPerson(person: person)
-            linkCardInList(card: card)
-        }
-        
-        cars.forEach { (car) in
-            let card = setupCardFromCar(car: car)
-            linkCardInList(card: card)
-        }
-        
-        pets.forEach { (pet) in
-            let card = setupCardFromPet(pet: pet)
-            linkCardInList(card: card)
-        }
-        
-        houses.forEach { (house) in
-            let card = setupCardFromHouse(house: house)
-            linkCardInList(card: card)
+        FirestoreService.shared.fetchPosts { posts in
+            
+            guard let posts = posts else {
+                return
+            }
+            
+            posts.forEach { post in
+                let card = self.setupCard(post: post as! ProducesCardViewModel)
+                self.linkCardInList(card: card)
+            }
         }
     }
     
-    fileprivate func linkCardInList(card: Card) {
-        previousCard?.nextCardView = card
-        previousCard = card
+    private func linkCardInList(card: Card) {
+        self.previousCard?.nextCard = card
+        self.previousCard = card
         if self.topCard == nil {
             self.topCard = card
         }
     }
     
-    fileprivate func setupCardFromPerson(person: Person) -> Card {
-        let card = Card()
-        card.cardViewModel = person.toCardViewModel()
+    private func setupCard(post: ProducesCardViewModel) -> Card {
+        let card = Card(viewModel: post.toCardViewModel())
         card.delegate = self
-        cardsDeckView.addSubview(card)
-        cardsDeckView.sendSubviewToBack(card)
+        
+        self.cardsDeckView.addSubview(card)
+        self.cardsDeckView.sendSubviewToBack(card)
         card.fillSuperview()
-        return card
-    }
-    
-    fileprivate func setupCardFromCar(car: Car) -> Card {
-        let card = Card()
-        card.cardViewModel = car.toCardViewModel()
-        card.delegate = self
-        cardsDeckView.addSubview(card)
-        cardsDeckView.sendSubviewToBack(card)
-        card.fillSuperview()
-        return card
-    }
-    
-    fileprivate func setupCardFromPet(pet: Pet) -> Card {
-        let card = Card()
-        card.cardViewModel = pet.toCardViewModel()
-        card.delegate = self
-        cardsDeckView.addSubview(card)
-        cardsDeckView.sendSubviewToBack(card)
-        card.fillSuperview()
-        return card
-    }
-    
-    fileprivate func setupCardFromHouse(house: House) -> Card {
-        let card = Card()
-        card.cardViewModel = house.toCardViewModel()
-        card.delegate = self
-        cardsDeckView.addSubview(card)
-        cardsDeckView.sendSubviewToBack(card)
-        card.fillSuperview()
+        
         return card
     }
     
     @objc func handleRefresh() {
-        if topCard == nil {
-            setupAllCards()
+        if self.topCard == nil {
+            self.setupAllCards()
         }
     }
     
-    @objc func handleDislike() {
-        performSwipeAnimation(translation: -700, angle: -15)
+    @objc
+    func handleDislike() {
+        self.performSwipeAnimation(translation: -700, angle: -15)
     }
     
-    @objc func handleLike() {
-        let card = topCard
-        performSwipeAnimation(translation: 700, angle: 15)
-        self.presentMatchView(withMatch: card!)
+    @objc
+    func handleLike() {
+        guard let card = topCard else {
+            return
+        }
+        
+        self.performSwipeAnimation(translation: 700, angle: 15)
+        self.presentMatchView(withMatch: card)
+    }
+}
+
+extension HomeController: CardDelegate, MatchViewDelegate {
+    
+    func cardDidSwipeRight(card: Card) {
+        self.handleLike()
     }
     
+    func cardDidSwipeLeft(card: Card) {
+        self.handleDislike()
+    }
+    
+    func didDismissMatchView() {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
 }

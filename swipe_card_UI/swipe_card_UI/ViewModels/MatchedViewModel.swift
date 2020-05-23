@@ -22,7 +22,7 @@ struct MatchedViewModel {
     init(user: Person, card: Card) {
         currentUserImageUrl = user.imageUrl
         currentUserBackgroundColour = .purple
-        matchedCardImageUrl = card.cardViewModel.imageUrl
-        matchedCardBackgroundColour = card.cardViewModel.backgroundColour
+        matchedCardImageUrl = card.viewModel.imageUrl
+        matchedCardBackgroundColour = card.viewModel.backgroundColour
     }
 }

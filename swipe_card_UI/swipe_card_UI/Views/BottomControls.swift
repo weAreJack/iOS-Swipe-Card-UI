@@ -29,7 +29,7 @@ class BottomControls: UIView {
     
     // MARK: - Methods
     
-    fileprivate func setupUI() {
+    private func setupUI() {
         addSubview(dislikeButton)
         addSubview(backButton)
         addSubview(likeButton)
@@ -60,6 +60,4 @@ class BottomControls: UIView {
         button.setImage(image.withRenderingMode(.alwaysOriginal), for: .normal)
         return button
     }
-    
 }
-

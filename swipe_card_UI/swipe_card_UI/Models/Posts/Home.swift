@@ -8,7 +8,7 @@
 
 import UIKit
 
-class House: Post, ProducesCardViewModel {
+class Home: Post, ProducesCardViewModel {
     
     // MARK: - Properties
     
@@ -16,7 +16,6 @@ class House: Post, ProducesCardViewModel {
         return UIColor.colour4
     }
     
-    private var addess: String
     private var type: String
     private var numberOfBedrooms: Int
     private var numberOfBathrooms: Int
@@ -31,7 +30,6 @@ class House: Post, ProducesCardViewModel {
     // MARK: - Init
     
     override init(firestoreData: [String: Any]) {
-        self.addess = firestoreData[FirestoreKey_addess] as! String
         self.type = firestoreData[FirestoreKey_type] as! String
         self.numberOfBedrooms = firestoreData[FirestoreKey_numberOfBedrooms] as! Int
         self.numberOfBathrooms = firestoreData[FirestoreKey_numberOfBathrooms] as! Int
@@ -42,14 +40,12 @@ class House: Post, ProducesCardViewModel {
     // MARK: - Methods
     
     func toCardViewModel() -> CardViewModel {
-        let attributedText = NSMutableAttributedString(string: self.addess, attributes: [.font : UIFont.boldSystemFont(ofSize: 24)])
+        let attributedText = NSMutableAttributedString(string: self.type, attributes: [.font : UIFont.boldSystemFont(ofSize: 24)])
         
-        let typeString = NSAttributedString(string: "\n\(self.type)", attributes: [.font : UIFont.systemFont(ofSize: 24)])
         let numberOfBedroomsString = NSAttributedString(string: "\n\(self.numberOfBedrooms) Bedrooms", attributes: [.font : UIFont.systemFont(ofSize: 20)])
         let numberOfBathroomsString = NSAttributedString(string: "\n\(self.numberOfBathrooms) Bathrooms", attributes: [.font : UIFont.systemFont(ofSize: 20)])
         let priceString = NSAttributedString(string: "\n£\(self.price)", attributes: [.font : UIFont.systemFont(ofSize: 20)])
         
-        attributedText.append(typeString)
         attributedText.append(numberOfBedroomsString)
         attributedText.append(numberOfBathroomsString)
         attributedText.append(priceString)

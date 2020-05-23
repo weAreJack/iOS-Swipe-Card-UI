@@ -10,6 +10,7 @@
 		170C1F6E9B40D4CFAE5EED7B /* Pods_swipe_card_UI_swipe_card_UIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5392C5E3DDA1F763860326D7 /* Pods_swipe_card_UI_swipe_card_UIUITests.framework */; };
 		940E56CD598B6A6CAA696D60 /* Pods_swipe_card_UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E417B50BE79C846B57B449D /* Pods_swipe_card_UI.framework */; };
 		9F75AE300679BD95A3A6B63F /* Pods_swipe_card_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A9CDD1DD68DC79EFBDEDB1 /* Pods_swipe_card_UITests.framework */; };
+		A0346A7724797BFB003A0E8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0346A7624797BFB003A0E8E /* GoogleService-Info.plist */; };
 		A0414A5D23143CC8002DE53C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414A5C23143CC8002DE53C /* AppDelegate.swift */; };
 		A0414A6423143CC9002DE53C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0414A6323143CC9002DE53C /* Assets.xcassets */; };
 		A0414A7223143CC9002DE53C /* swipe_card_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414A7123143CC9002DE53C /* swipe_card_UITests.swift */; };
@@ -20,18 +21,20 @@
 		A0414A9623144105002DE53C /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414A9523144105002DE53C /* Person.swift */; };
 		A0414A9823144112002DE53C /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414A9723144112002DE53C /* HomeController.swift */; };
 		A0414A9A2314412C002DE53C /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414A992314412B002DE53C /* Pet.swift */; };
-		A0414A9C2314413D002DE53C /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414A9B2314413D002DE53C /* House.swift */; };
+		A0414A9C2314413D002DE53C /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414A9B2314413D002DE53C /* Home.swift */; };
 		A0414A9E23145B35002DE53C /* BottomControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414A9D23145B35002DE53C /* BottomControls.swift */; };
 		A0414AA023145B41002DE53C /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414A9F23145B41002DE53C /* NavBar.swift */; };
 		A0414AA223145C7D002DE53C /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414AA123145C7D002DE53C /* MatchView.swift */; };
 		A0414AA623145C9A002DE53C /* KeepSwipingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414AA523145C9A002DE53C /* KeepSwipingButton.swift */; };
-		A0414AA9231473B8002DE53C /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414AA8231473B8002DE53C /* UIViewExtension.swift */; };
+		A0414AA9231473B8002DE53C /* UIView+DropShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414AA8231473B8002DE53C /* UIView+DropShadow.swift */; };
 		A0414AAB2314773F002DE53C /* BottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414AAA2314773F002DE53C /* BottomButton.swift */; };
 		A0414AAD231477E8002DE53C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414AAC231477E8002DE53C /* UIColorExtension.swift */; };
 		A0414AB123153CA8002DE53C /* MatchedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414AB023153CA8002DE53C /* MatchedViewModel.swift */; };
-		A0414AB523166A22002DE53C /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414AB423166A22002DE53C /* RoundedImageView.swift */; };
-		A0414AB72316CC39002DE53C /* HomeController+Handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414AB62316CC39002DE53C /* HomeController+Handlers.swift */; };
+		A0414AB523166A22002DE53C /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414AB423166A22002DE53C /* CircularImageView.swift */; };
+		A0414AB72316CC39002DE53C /* HomeController+Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414AB62316CC39002DE53C /* HomeController+Methods.swift */; };
 		A0414ACB23173657002DE53C /* MatchView+Handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414ACA23173657002DE53C /* MatchView+Handlers.swift */; };
+		A0736BF42479874F00144300 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0736BF32479874F00144300 /* FirestoreService.swift */; };
+		A0736BF824799FB800144300 /* UIView+ConvenienceContraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0736BF724799FB800144300 /* UIView+ConvenienceContraints.swift */; };
 		A0C2E61B247881B5001399F2 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C2E61A247881B5001399F2 /* Post.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +59,7 @@
 		2E417B50BE79C846B57B449D /* Pods_swipe_card_UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swipe_card_UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5392C5E3DDA1F763860326D7 /* Pods_swipe_card_UI_swipe_card_UIUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swipe_card_UI_swipe_card_UIUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92AD2B2735AC122D73D67090 /* Pods-swipe_card_UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swipe_card_UITests.debug.xcconfig"; path = "Target Support Files/Pods-swipe_card_UITests/Pods-swipe_card_UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A0346A7624797BFB003A0E8E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A0414A5923143CC8002DE53C /* swipe_card_UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swipe_card_UI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0414A5C23143CC8002DE53C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0414A6323143CC9002DE53C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,18 +76,20 @@
 		A0414A9523144105002DE53C /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		A0414A9723144112002DE53C /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		A0414A992314412B002DE53C /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
-		A0414A9B2314413D002DE53C /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
+		A0414A9B2314413D002DE53C /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		A0414A9D23145B35002DE53C /* BottomControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomControls.swift; sourceTree = "<group>"; };
 		A0414A9F23145B41002DE53C /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
 		A0414AA123145C7D002DE53C /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
 		A0414AA523145C9A002DE53C /* KeepSwipingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepSwipingButton.swift; sourceTree = "<group>"; };
-		A0414AA8231473B8002DE53C /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		A0414AA8231473B8002DE53C /* UIView+DropShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+DropShadow.swift"; sourceTree = "<group>"; };
 		A0414AAA2314773F002DE53C /* BottomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButton.swift; sourceTree = "<group>"; };
 		A0414AAC231477E8002DE53C /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		A0414AB023153CA8002DE53C /* MatchedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedViewModel.swift; sourceTree = "<group>"; };
-		A0414AB423166A22002DE53C /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
-		A0414AB62316CC39002DE53C /* HomeController+Handlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeController+Handlers.swift"; sourceTree = "<group>"; };
+		A0414AB423166A22002DE53C /* CircularImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
+		A0414AB62316CC39002DE53C /* HomeController+Methods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeController+Methods.swift"; sourceTree = "<group>"; };
 		A0414ACA23173657002DE53C /* MatchView+Handlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchView+Handlers.swift"; sourceTree = "<group>"; };
+		A0736BF32479874F00144300 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		A0736BF724799FB800144300 /* UIView+ConvenienceContraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConvenienceContraints.swift"; sourceTree = "<group>"; };
 		A083959A9F134A85D08FB1E7 /* Pods-swipe_card_UI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swipe_card_UI.debug.xcconfig"; path = "Target Support Files/Pods-swipe_card_UI/Pods-swipe_card_UI.debug.xcconfig"; sourceTree = "<group>"; };
 		A0C2E61A247881B5001399F2 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		B416B0CE6FB2606D48D340E8 /* Pods-swipe_card_UI-swipe_card_UIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swipe_card_UI-swipe_card_UIUITests.release.xcconfig"; path = "Target Support Files/Pods-swipe_card_UI-swipe_card_UIUITests/Pods-swipe_card_UI-swipe_card_UIUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -146,13 +152,14 @@
 		A0414A5B23143CC8002DE53C /* swipe_card_UI */ = {
 			isa = PBXGroup;
 			children = (
-				A0414A5C23143CC8002DE53C /* AppDelegate.swift */,
+				A0414AA723147381002DE53C /* Extensions */,
 				A0414A8C23143F51002DE53C /* Models */,
 				A0414A8D23143F59002DE53C /* Views */,
 				A0414A8A23143F42002DE53C /* ViewModels */,
 				A0414A8B23143F49002DE53C /* Controllers */,
-				A0414AA723147381002DE53C /* Extensions */,
 				A0414A6323143CC9002DE53C /* Assets.xcassets */,
+				A0414A5C23143CC8002DE53C /* AppDelegate.swift */,
+				A0346A7624797BFB003A0E8E /* GoogleService-Info.plist */,
 				A0414A6823143CC9002DE53C /* Info.plist */,
 			);
 			path = swipe_card_UI;
@@ -189,7 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				A0414A9723144112002DE53C /* HomeController.swift */,
-				A0414AB62316CC39002DE53C /* HomeController+Handlers.swift */,
+				A0414AB62316CC39002DE53C /* HomeController+Methods.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -197,11 +204,8 @@
 		A0414A8C23143F51002DE53C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A0C2E61A247881B5001399F2 /* Post.swift */,
-				A0414A93231440E2002DE53C /* Car.swift */,
-				A0414A9523144105002DE53C /* Person.swift */,
-				A0414A992314412B002DE53C /* Pet.swift */,
-				A0414A9B2314413D002DE53C /* House.swift */,
+				A0736BF22479873C00144300 /* Services */,
+				A0736BF12479873200144300 /* Posts */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -210,7 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				A0414A90231440BA002DE53C /* Card.swift */,
-				A0414AB423166A22002DE53C /* RoundedImageView.swift */,
+				A0414AB423166A22002DE53C /* CircularImageView.swift */,
 				A0414A9D23145B35002DE53C /* BottomControls.swift */,
 				A0414AAA2314773F002DE53C /* BottomButton.swift */,
 				A0414A9F23145B41002DE53C /* NavBar.swift */,
@@ -224,10 +228,31 @@
 		A0414AA723147381002DE53C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				A0414AA8231473B8002DE53C /* UIViewExtension.swift */,
+				A0414AA8231473B8002DE53C /* UIView+DropShadow.swift */,
+				A0736BF724799FB800144300 /* UIView+ConvenienceContraints.swift */,
 				A0414AAC231477E8002DE53C /* UIColorExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A0736BF12479873200144300 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				A0C2E61A247881B5001399F2 /* Post.swift */,
+				A0414A93231440E2002DE53C /* Car.swift */,
+				A0414A9523144105002DE53C /* Person.swift */,
+				A0414A992314412B002DE53C /* Pet.swift */,
+				A0414A9B2314413D002DE53C /* Home.swift */,
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
+		A0736BF22479873C00144300 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A0736BF32479874F00144300 /* FirestoreService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		AA129A384E75F2A2D29F807A /* Frameworks */ = {
@@ -363,6 +388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0414A6423143CC9002DE53C /* Assets.xcassets in Resources */,
+				A0346A7724797BFB003A0E8E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,22 +520,24 @@
 				A0414AB123153CA8002DE53C /* MatchedViewModel.swift in Sources */,
 				A0414A9823144112002DE53C /* HomeController.swift in Sources */,
 				A0414AA023145B41002DE53C /* NavBar.swift in Sources */,
-				A0414A9C2314413D002DE53C /* House.swift in Sources */,
-				A0414AA9231473B8002DE53C /* UIViewExtension.swift in Sources */,
+				A0414A9C2314413D002DE53C /* Home.swift in Sources */,
+				A0414AA9231473B8002DE53C /* UIView+DropShadow.swift in Sources */,
 				A0414ACB23173657002DE53C /* MatchView+Handlers.swift in Sources */,
+				A0736BF42479874F00144300 /* FirestoreService.swift in Sources */,
 				A0414A9E23145B35002DE53C /* BottomControls.swift in Sources */,
 				A0414AAB2314773F002DE53C /* BottomButton.swift in Sources */,
 				A0414A9A2314412C002DE53C /* Pet.swift in Sources */,
 				A0414A8F23143F99002DE53C /* CardViewModel.swift in Sources */,
 				A0414A94231440E2002DE53C /* Car.swift in Sources */,
+				A0736BF824799FB800144300 /* UIView+ConvenienceContraints.swift in Sources */,
 				A0414A91231440BA002DE53C /* Card.swift in Sources */,
 				A0414AAD231477E8002DE53C /* UIColorExtension.swift in Sources */,
-				A0414AB523166A22002DE53C /* RoundedImageView.swift in Sources */,
+				A0414AB523166A22002DE53C /* CircularImageView.swift in Sources */,
 				A0414AA623145C9A002DE53C /* KeepSwipingButton.swift in Sources */,
 				A0C2E61B247881B5001399F2 /* Post.swift in Sources */,
 				A0414A9623144105002DE53C /* Person.swift in Sources */,
 				A0414AA223145C7D002DE53C /* MatchView.swift in Sources */,
-				A0414AB72316CC39002DE53C /* HomeController+Handlers.swift in Sources */,
+				A0414AB72316CC39002DE53C /* HomeController+Methods.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -673,7 +701,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "JAS2019.swipe-card-UI";
+				PRODUCT_BUNDLE_IDENTIFIER = "JAS2020.swipe-card-UI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -692,7 +720,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "JAS2019.swipe-card-UI";
+				PRODUCT_BUNDLE_IDENTIFIER = "JAS2020.swipe-card-UI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
