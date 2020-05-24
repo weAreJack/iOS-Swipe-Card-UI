@@ -88,33 +88,58 @@ class MatchView: UIView {
             self.addSubview($0)
         }
         
-        self.itsAMatchImageView.constraints(centerXAnchor: self.centerXAnchor,
-                                            bottomAnchor: self.descriptionLabel.topAnchor,
-                                            borderPadding: .init(top: .zero, left: .zero, bottom: 16, right: .zero),
-                                            size: itsaMatchSize)
+        self.itsAMatchImageView.hybridConstraints(centerXAnchor: self.centerXAnchor,
+                                                  centerYAnchor: nil,
+                                                  topAnchor: nil,
+                                                  leadingAnchor: nil,
+                                                  bottomAnchor: self.descriptionLabel.topAnchor,
+                                                  trailingAnchor: nil,
+                                                  widthAnchor: nil,
+                                                  heightAnchor: nil,
+                                                  borderPadding: .init(top: .zero, left: .zero, bottom: 16, right: .zero),
+                                                  size: itsaMatchSize)
         
-        self.descriptionLabel.borderConstraints(leadingAnchor: self.leadingAnchor,
+        self.descriptionLabel.borderConstraints(topAnchor: nil,
+                                                leadingAnchor: self.leadingAnchor,
                                                 bottomAnchor: self.currentUserImageView.topAnchor,
                                                 trailingAnchor: self.trailingAnchor,
                                                 equalBorderPadding: standardPadding * 2,
                                                 size: descriptionLabelSize)
         
-        self.currentUserImageView.constraints(centerYAnchor: self.centerYAnchor,
-                                              trailingAnchor: self.centerXAnchor,
-                                              positionConstants: .init(x: .zero, y: standardPadding * 3),
-                                              borderPadding: .init(top: .zero, left: .zero, bottom: .zero, right: standardPadding),
-                                              size: .init(width: postImageWidth, height: postImageWidth))
+        self.currentUserImageView.hybridConstraints(centerXAnchor: self.centerXAnchor,
+                                                    centerYAnchor: self.centerYAnchor,
+                                                    topAnchor: nil,
+                                                    leadingAnchor: nil,
+                                                    bottomAnchor: self.descriptionLabel.topAnchor,
+                                                    trailingAnchor: nil,
+                                                    widthAnchor: nil,
+                                                    heightAnchor: nil,
+                                                    positionConstants: .init(x: .zero, y: standardPadding * 3),
+                                                    borderPadding: .init(top: .zero, left: .zero, bottom: .zero, right: standardPadding),
+                                                    size: .init(width: postImageWidth, height: postImageWidth))
         
-        self.matchedCardImageView.constraints(centerYAnchor: self.centerYAnchor,
-                                              leadingAnchor: self.centerXAnchor,
-                                              positionConstants: .init(x: .zero, y: standardPadding * 3),
-                                              borderPadding: .init(top: .zero, left: standardPadding, bottom: .zero, right: .zero),
-                                              size: .init(width: postImageWidth, height: postImageWidth))
-        
-        self.keepSwipingButton.constraints(centerXAnchor: self.centerXAnchor,
-                                           topAnchor: self.matchedCardImageView.bottomAnchor,
-                                           borderPadding: .init(top: standardPadding * 2, left: .zero, bottom: .zero, right: .zero),
-                                           size: keepSwipingButtonSize)
+        self.matchedCardImageView.hybridConstraints(centerXAnchor: self.centerXAnchor,
+                                                    centerYAnchor: self.centerYAnchor,
+                                                    topAnchor: nil,
+                                                    leadingAnchor: nil,
+                                                    bottomAnchor: self.descriptionLabel.topAnchor,
+                                                    trailingAnchor: nil,
+                                                    widthAnchor: nil,
+                                                    heightAnchor: nil,
+                                                    positionConstants: .init(x: .zero, y: standardPadding * 3),
+                                                    borderPadding: .init(top: .zero, left: standardPadding, bottom: .zero, right: .zero),
+                                                    size: .init(width: postImageWidth, height: postImageWidth))
+
+        self.keepSwipingButton.hybridConstraints(centerXAnchor: self.centerXAnchor,
+                                                 centerYAnchor: nil,
+                                                 topAnchor: self.matchedCardImageView.bottomAnchor,
+                                                 leadingAnchor: nil,
+                                                 bottomAnchor: self.descriptionLabel.topAnchor,
+                                                 trailingAnchor: nil,
+                                                 widthAnchor: nil,
+                                                 heightAnchor: nil,
+                                                 borderPadding: .init(top: standardPadding * 2, left: .zero, bottom: .zero, right: .zero),
+                                                 size: keepSwipingButtonSize)
     }
     
     private func animateAddBlurView() {

@@ -61,6 +61,7 @@ class HomeController: UIViewController {
         let layoutGuide = view.safeAreaLayoutGuide
         self.navBar.borderConstraints(topAnchor: layoutGuide.topAnchor,
                                       leadingAnchor: layoutGuide.leadingAnchor,
+                                      bottomAnchor: nil,
                                       trailingAnchor: layoutGuide.trailingAnchor,
                                       size: .init(width: CGFloat.zero, height: self.navBarHeight))
         

@@ -58,17 +58,29 @@ class BottomControls: UIView {
         self.backButton.roundCorners(radius: self.smallButtonSize / 2)
         
         self.addSubview(self.dislikeButton)
-        self.dislikeButton.constraints(centerYAnchor: centerYAnchor,
-                                       trailingAnchor: self.backButton.leadingAnchor,
-                                       borderPadding: .init(top: .zero, left: .zero, bottom: .zero, right: self.padding),
-                                       size: .init(width: self.largeButtonSize, height: self.largeButtonSize))
+        self.dislikeButton.hybridConstraints(centerXAnchor: nil,
+                                             centerYAnchor: self.centerYAnchor,
+                                             topAnchor: nil,
+                                             leadingAnchor: nil,
+                                             bottomAnchor: nil,
+                                             trailingAnchor: self.backButton.leadingAnchor,
+                                             widthAnchor: nil,
+                                             heightAnchor: nil,
+                                             borderPadding: .init(top: .zero, left: .zero, bottom: .zero, right: self.padding),
+                                             size: .init(width: self.largeButtonSize, height: self.largeButtonSize))
         self.dislikeButton.roundCorners(radius: self.largeButtonSize / 2)
 
         self.addSubview(self.likeButton)
-        self.likeButton.constraints(centerYAnchor: centerYAnchor,
-                                    leadingAnchor: self.backButton.trailingAnchor,
-                                    borderPadding: .init(top: .zero, left: self.padding, bottom: .zero, right: .zero),
-                                    size: .init(width: self.largeButtonSize, height: self.largeButtonSize))
+        self.likeButton.hybridConstraints(centerXAnchor: nil,
+                                          centerYAnchor: self.centerYAnchor,
+                                          topAnchor: nil,
+                                          leadingAnchor: self.backButton.trailingAnchor,
+                                          bottomAnchor: nil,
+                                          trailingAnchor: nil,
+                                          widthAnchor: nil,
+                                          heightAnchor: nil,
+                                          borderPadding: .init(top: .zero, left: self.padding, bottom: .zero, right: .zero),
+                                          size: .init(width: self.largeButtonSize, height: self.largeButtonSize))
         self.likeButton.roundCorners(radius: self.largeButtonSize / 2)
         
         self.translatesAutoresizingMaskIntoConstraints = false

@@ -1,0 +1,11 @@
+framework module ProgrammaticConstraints {
+  umbrella header "ProgrammaticConstraints.h"
+
+  export *
+  module * { export * }
+}
+
+module ProgrammaticConstraints.Swift {
+    header "ProgrammaticConstraints-Swift.h"
+    requires objc
+}
