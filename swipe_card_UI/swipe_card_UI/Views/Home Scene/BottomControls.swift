@@ -22,8 +22,12 @@ class BottomControls: UIView {
     private let dislikeButton = BottomButton(image: #imageLiteral(resourceName: "dislikeButton"), tintColour: .red)
     private let likeButton = BottomButton(image: #imageLiteral(resourceName: "like"), tintColour: .colour5)
     
-    private let height: CGFloat = 110
     weak var delegate: BottomControlsDelegate?
+    
+    private let height: CGFloat = 110
+    private let padding: CGFloat = 32
+    private let largeButtonSize: CGFloat = 80
+    private let smallButtonSize: CGFloat = 70
     
     // MARK: - Init
     
@@ -46,30 +50,26 @@ class BottomControls: UIView {
     }
     
     private func layoutViews() {
-        let padding: CGFloat = 32
-        let largeButtonSize: CGFloat = 80
-        let smallButtonSize: CGFloat = 70
-        
         self.addSubview(self.backButton)
         self.backButton.centeringConstraints(centerXAnchor: self.centerXAnchor,
                                              centerYAnchor: self.centerYAnchor,
-                                             widthConstant: smallButtonSize,
-                                             heightConstant: smallButtonSize)
-        self.backButton.roundCorners(radius: smallButtonSize / 2)
+                                             widthConstant: self.smallButtonSize,
+                                             heightConstant: self.smallButtonSize)
+        self.backButton.roundCorners(radius: self.smallButtonSize / 2)
         
         self.addSubview(self.dislikeButton)
         self.dislikeButton.constraints(centerYAnchor: centerYAnchor,
                                        trailingAnchor: self.backButton.leadingAnchor,
-                                       borderPadding: .init(top: .zero, left: .zero, bottom: .zero, right: padding),
-                                       size: .init(width: largeButtonSize, height: largeButtonSize))
-        self.dislikeButton.roundCorners(radius: largeButtonSize / 2)
+                                       borderPadding: .init(top: .zero, left: .zero, bottom: .zero, right: self.padding),
+                                       size: .init(width: self.largeButtonSize, height: self.largeButtonSize))
+        self.dislikeButton.roundCorners(radius: self.largeButtonSize / 2)
 
         self.addSubview(self.likeButton)
         self.likeButton.constraints(centerYAnchor: centerYAnchor,
                                     leadingAnchor: self.backButton.trailingAnchor,
-                                    borderPadding: .init(top: .zero, left: padding, bottom: .zero, right: .zero),
-                                    size: .init(width: largeButtonSize, height: largeButtonSize))
-        self.likeButton.roundCorners(radius: largeButtonSize / 2)
+                                    borderPadding: .init(top: .zero, left: self.padding, bottom: .zero, right: .zero),
+                                    size: .init(width: self.largeButtonSize, height: self.largeButtonSize))
+        self.likeButton.roundCorners(radius: self.largeButtonSize / 2)
         
         self.translatesAutoresizingMaskIntoConstraints = false
         self.heightAnchor.constraint(equalToConstant: self.height).isActive = true

@@ -10,7 +10,6 @@ import UIKit
 
 /// Keys used to access each NSLayoutConstraint returned by all methods in Programatic Constraints.
 enum ConstraintKey {
-    
     case LeadingConstraint
     case TrailingConstraint
     case TopConstraint

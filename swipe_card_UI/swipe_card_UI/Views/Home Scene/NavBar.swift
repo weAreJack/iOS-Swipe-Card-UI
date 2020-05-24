@@ -14,6 +14,8 @@ class NavBar: UIView {
     
     private let icon = UIImageView(image: #imageLiteral(resourceName: "swipe_card_UI_icon"))
     
+    private let iconSize: CGFloat = 36
+    
     // MARK: - Init
     
     override init(frame: CGRect) {
@@ -34,12 +36,10 @@ class NavBar: UIView {
     }
     
     private func layoutViews() {
-        let iconSize: CGFloat = 36
-        
         self.addSubview(icon)
         self.icon.centeringConstraints(centerXAnchor: self.centerXAnchor,
                                        centerYAnchor: self.centerYAnchor,
-                                       widthConstant: iconSize,
-                                       heightConstant: iconSize)
+                                       widthConstant: self.iconSize,
+                                       heightConstant: self.iconSize)
     }
 }

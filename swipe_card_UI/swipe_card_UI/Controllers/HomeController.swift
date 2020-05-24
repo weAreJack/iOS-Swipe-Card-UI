@@ -33,6 +33,8 @@ class HomeController: UIViewController {
     private let user = Person()
     
     private let navBarHeight: CGFloat = 60
+    private let swipeTranslation: CGFloat = 700
+    private let swipeAngle: CGFloat = 15
     
     // MARK:- Init
     
@@ -82,7 +84,7 @@ class HomeController: UIViewController {
         translationAnimation.isRemovedOnCompletion = false
         
         let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
-        rotationAnimation.toValue = angle*CGFloat.pi/180
+        rotationAnimation.toValue = angle * CGFloat.pi / 180
         rotationAnimation.duration = duration
         
         let card = topCard
@@ -128,6 +130,8 @@ class HomeController: UIViewController {
     }
     
     private func showActivityView() {
+        let animationDuration: Double = 0.15
+        
         self.activityView = UIActivityIndicatorView(style: .whiteLarge)
         self.activityView?.color = .black
         self.activityView?.alpha = .zero
@@ -137,14 +141,15 @@ class HomeController: UIViewController {
                                                 centerYAnchor: self.cardsDeckView.centerYAnchor)
         
         self.activityView?.startAnimating()
-        UIView.animate(withDuration: 0.15) {
-            self.activityView?.alpha = 1
+        UIView.animate(withDuration: animationDuration) {
+            self.activityView?.alpha = .one
         }
     }
     
     private func hideActivityView() {
+        let animationDuration: Double = 0.15
         
-        UIView.animate(withDuration: 0.15, animations: {
+        UIView.animate(withDuration: animationDuration, animations: {
             self.activityView?.alpha = .zero
         }) { _ in
             self.activityView?.stopAnimating()
@@ -190,7 +195,7 @@ class HomeController: UIViewController {
     }
     
     private func handleDislike() {
-        self.performSwipeAnimation(translation: -700, angle: -15)
+        self.performSwipeAnimation(translation: -self.swipeTranslation, angle: -self.swipeAngle)
     }
     
     private func handleLike() {
@@ -198,7 +203,7 @@ class HomeController: UIViewController {
             return
         }
         
-        self.performSwipeAnimation(translation: 700, angle: 15)
+        self.performSwipeAnimation(translation: self.swipeTranslation, angle: self.swipeAngle)
         self.presentMatchView(withMatch: card)
     }
 }

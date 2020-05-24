@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		940E56CD598B6A6CAA696D60 /* Pods_swipe_card_UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E417B50BE79C846B57B449D /* Pods_swipe_card_UI.framework */; };
 		A0015801247AE1C000584AFB /* UIViewController+StatusBarCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0015800247AE1C000584AFB /* UIViewController+StatusBarCover.swift */; };
+		A0015803247AEC7A00584AFB /* CGFloat+One.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0015802247AEC7A00584AFB /* CGFloat+One.swift */; };
 		A0346A7724797BFB003A0E8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0346A7624797BFB003A0E8E /* GoogleService-Info.plist */; };
 		A0414A5D23143CC8002DE53C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414A5C23143CC8002DE53C /* AppDelegate.swift */; };
 		A0414A6423143CC9002DE53C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0414A6323143CC9002DE53C /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 		5392C5E3DDA1F763860326D7 /* Pods_swipe_card_UI_swipe_card_UIUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swipe_card_UI_swipe_card_UIUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92AD2B2735AC122D73D67090 /* Pods-swipe_card_UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swipe_card_UITests.debug.xcconfig"; path = "Target Support Files/Pods-swipe_card_UITests/Pods-swipe_card_UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A0015800247AE1C000584AFB /* UIViewController+StatusBarCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+StatusBarCover.swift"; sourceTree = "<group>"; };
+		A0015802247AEC7A00584AFB /* CGFloat+One.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+One.swift"; sourceTree = "<group>"; };
 		A0346A7624797BFB003A0E8E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A0414A5923143CC8002DE53C /* swipe_card_UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swipe_card_UI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0414A5C23143CC8002DE53C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				A0414AA723147381002DE53C /* Extensions */,
+				A0736BF22479873C00144300 /* Network Services */,
 				A0414A8C23143F51002DE53C /* Models */,
 				A0414A8D23143F59002DE53C /* Views */,
 				A0414A8A23143F42002DE53C /* ViewModels */,
@@ -144,7 +147,6 @@
 		A0414A8C23143F51002DE53C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A0736BF22479873C00144300 /* Services */,
 				A0736BF12479873200144300 /* Posts */,
 			);
 			path = Models;
@@ -170,6 +172,7 @@
 				A0AC9DA62479B4C10052D8B9 /* UIView+Constraints.swift */,
 				A0414AAC231477E8002DE53C /* UIColor+AppColours.swift */,
 				A0E1D0712479D1F9003E1EA9 /* UIButton+ConvenienceInit.swift */,
+				A0015802247AEC7A00584AFB /* CGFloat+One.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -186,12 +189,12 @@
 			path = Posts;
 			sourceTree = "<group>";
 		};
-		A0736BF22479873C00144300 /* Services */ = {
+		A0736BF22479873C00144300 /* Network Services */ = {
 			isa = PBXGroup;
 			children = (
 				A0736BF32479874F00144300 /* FirestoreService.swift */,
 			);
-			path = Services;
+			path = "Network Services";
 			sourceTree = "<group>";
 		};
 		A0AC9DA92479C8570052D8B9 /* Home Scene */ = {
@@ -367,6 +370,7 @@
 				A0414A8F23143F99002DE53C /* CardViewModel.swift in Sources */,
 				A0414A94231440E2002DE53C /* Car.swift in Sources */,
 				A0736BF824799FB800144300 /* UIView+ConstraintsEqualTo.swift in Sources */,
+				A0015803247AEC7A00584AFB /* CGFloat+One.swift in Sources */,
 				A0414A91231440BA002DE53C /* Card.swift in Sources */,
 				A0015801247AE1C000584AFB /* UIViewController+StatusBarCover.swift in Sources */,
 				A0414AAD231477E8002DE53C /* UIColor+AppColours.swift in Sources */,

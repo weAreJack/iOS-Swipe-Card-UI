@@ -78,7 +78,11 @@ class MatchView: UIView {
     }
     
     func layoutViews() {
-        let imageWidth: CGFloat = 140
+        let itsaMatchSize = CGSize(width: 300, height: 80)
+        let descriptionLabelSize = CGSize(width: .zero, height: 75)
+        let keepSwipingButtonSize = CGSize(width: 300, height: 60)
+        let postImageWidth: CGFloat = 140
+        let standardPadding: CGFloat = 16
         
         self.views.forEach {
             self.addSubview($0)
@@ -87,30 +91,30 @@ class MatchView: UIView {
         self.itsAMatchImageView.constraints(centerXAnchor: self.centerXAnchor,
                                             bottomAnchor: self.descriptionLabel.topAnchor,
                                             borderPadding: .init(top: .zero, left: .zero, bottom: 16, right: .zero),
-                                            size: .init(width: 300, height: 80))
+                                            size: itsaMatchSize)
         
         self.descriptionLabel.borderConstraints(leadingAnchor: self.leadingAnchor,
                                                 bottomAnchor: self.currentUserImageView.topAnchor,
                                                 trailingAnchor: self.trailingAnchor,
-                                                equalBorderPadding: 32,
-                                                size: .init(width: .zero, height: 75))
+                                                equalBorderPadding: standardPadding * 2,
+                                                size: descriptionLabelSize)
         
         self.currentUserImageView.constraints(centerYAnchor: self.centerYAnchor,
                                               trailingAnchor: self.centerXAnchor,
-                                              positionConstants: .init(x: .zero, y: 48),
-                                              borderPadding: .init(top: .zero, left: .zero, bottom: .zero, right: 16),
-                                              size: .init(width: imageWidth, height: imageWidth))
+                                              positionConstants: .init(x: .zero, y: standardPadding * 3),
+                                              borderPadding: .init(top: .zero, left: .zero, bottom: .zero, right: standardPadding),
+                                              size: .init(width: postImageWidth, height: postImageWidth))
         
         self.matchedCardImageView.constraints(centerYAnchor: self.centerYAnchor,
                                               leadingAnchor: self.centerXAnchor,
-                                              positionConstants: .init(x: .zero, y: 48),
-                                              borderPadding: .init(top: .zero, left: 16, bottom: .zero, right: .zero),
-                                              size: .init(width: imageWidth, height: imageWidth))
+                                              positionConstants: .init(x: .zero, y: standardPadding * 3),
+                                              borderPadding: .init(top: .zero, left: standardPadding, bottom: .zero, right: .zero),
+                                              size: .init(width: postImageWidth, height: postImageWidth))
         
         self.keepSwipingButton.constraints(centerXAnchor: self.centerXAnchor,
                                            topAnchor: self.matchedCardImageView.bottomAnchor,
-                                           borderPadding: .init(top: 32, left: .zero, bottom: .zero, right: .zero),
-                                           size: .init(width: 300, height: 60))
+                                           borderPadding: .init(top: standardPadding * 2, left: .zero, bottom: .zero, right: .zero),
+                                           size: keepSwipingButtonSize)
     }
     
     private func animateAddBlurView() {
@@ -130,7 +134,7 @@ class MatchView: UIView {
                        initialSpringVelocity: self.fadeSpringVelocity,
                        options: .curveEaseOut,
                        animations: {
-            self.alpha = 1
+                        self.alpha = .one
         })
     }
     
@@ -141,9 +145,16 @@ class MatchView: UIView {
     }
     
     private func setstartingPositions(_ imageViewRotationOffset: CGFloat) {
-        self.currentUserImageView.transform = CGAffineTransform(rotationAngle: imageViewRotationOffset).concatenating(CGAffineTransform(translationX: 400, y: .zero))
-        self.matchedCardImageView.transform = CGAffineTransform(rotationAngle: -imageViewRotationOffset).concatenating(CGAffineTransform(translationX: -400, y: .zero))
-        self.keepSwipingButton.transform = CGAffineTransform(translationX: 500, y: .zero)
+        let imageTranslation: CGFloat = 400
+        let buttonTranslation: CGFloat = 500
+        
+        self.currentUserImageView.transform = CGAffineTransform(rotationAngle: imageViewRotationOffset)
+            .concatenating(CGAffineTransform(translationX: imageTranslation, y: .zero))
+        
+        self.matchedCardImageView.transform = CGAffineTransform(rotationAngle: -imageViewRotationOffset)
+            .concatenating(CGAffineTransform(translationX: -imageTranslation, y: .zero))
+        
+        self.keepSwipingButton.transform = CGAffineTransform(translationX: buttonTranslation, y: .zero)
     }
     
     private func startMainAnimations(_ imageViewRotationOffset: CGFloat) {

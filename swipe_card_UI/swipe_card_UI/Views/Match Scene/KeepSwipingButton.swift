@@ -35,7 +35,7 @@ class KeepSwipingButton: UIButton {
     }
     
     private func layoutView(_ rect: CGRect) {
-        let cornerRadius = rect.height/2
+        let cornerRadius = rect.height / 2
         self.layer.cornerRadius = cornerRadius
         
          self.addGradientLayer(rect, cornerRadius)

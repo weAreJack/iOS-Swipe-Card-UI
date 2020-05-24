@@ -25,6 +25,10 @@ class Card: UIView {
     private let imageView = UIImageView()
     private let informationLabel = UILabel()
     
+    private let borderPadding: CGFloat = 16
+    private let corderRadius: CGFloat = 25
+    private let borderWidth: CGFloat = 4
+    
     // MARK: - Init
     
     init(viewModel: CardViewModel) {
@@ -43,8 +47,6 @@ class Card: UIView {
     // MARK: - Methods
     
     private func layoutViews() {
-        let borderPadding: CGFloat = 16
-        
         self.addSubview(self.imageView)
         self.imageView.constraintsEqual(toView: self)
         
@@ -53,14 +55,14 @@ class Card: UIView {
                                                 leadingAnchor: self.leadingAnchor,
                                                 bottomAnchor: self.bottomAnchor,
                                                 trailingAnchor: self.trailingAnchor,
-                                                equalBorderPadding: borderPadding)
+                                                equalBorderPadding: self.borderPadding)
     }
     
     private func configureViews() {
         self.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handlePan)))
-        self.layer.cornerRadius = 25
+        self.layer.cornerRadius = self.corderRadius
         self.layer.borderColor = UIColor.black.cgColor
-        self.layer.borderWidth = 4
+        self.layer.borderWidth = self.borderWidth
         self.clipsToBounds = true
         self.backgroundColor = self.viewModel.backgroundColour
         
@@ -93,7 +95,7 @@ class Card: UIView {
     
     private func handleEnded(_ gesture: UIPanGestureRecognizer) {
         let swipeThreshold: CGFloat = 120
-        let translationDirection: Int = gesture.translation(in: nil).x > .zero ? 1 : -1
+        let translationDirection: Int = gesture.translation(in: nil).x > .zero ? .one : -.one
         let shouldDismissCard = abs(gesture.translation(in: nil).x) > swipeThreshold
         if shouldDismissCard {
             self.handleSwiped(translationDirection)
@@ -103,7 +105,7 @@ class Card: UIView {
     }
     
     private func handleSwiped(_ translationDirection: Int) {
-        if translationDirection == 1 {
+        if translationDirection == .one {
             self.delegate?.cardDidSwipeRight(card: self)
         } else {
             self.delegate?.cardDidSwipeLeft(card: self)
@@ -111,7 +113,7 @@ class Card: UIView {
     }
     
     private func animateToIdentity() {
-        let duration: Double = 1
+        let duration: Double = .one
         let delay: Double = .zero
         let springDamping: CGFloat = 0.6
         let springVelocity: CGFloat = 0.1

@@ -18,7 +18,7 @@ class CircularImageView: UIImageView {
         self.contentMode = .scaleAspectFit
         self.clipsToBounds = true
         
-        self.layer.cornerRadius = self.frame.width/2
+        self.layer.cornerRadius = self.frame.width / 2
         self.layer.borderWidth = 2
         self.layer.borderColor = UIColor.white.cgColor
     }
