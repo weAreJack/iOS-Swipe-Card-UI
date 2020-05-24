@@ -30,8 +30,8 @@
 		A0414AB123153CA8002DE53C /* MatchedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414AB023153CA8002DE53C /* MatchedViewModel.swift */; };
 		A0414AB523166A22002DE53C /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414AB423166A22002DE53C /* CircularImageView.swift */; };
 		A0736BF42479874F00144300 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0736BF32479874F00144300 /* FirestoreService.swift */; };
-		A09BD05E247B1B9000D94D51 /* ProgrammaticConstraints.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A09BD05C247B19D700D94D51 /* ProgrammaticConstraints.framework */; };
-		A09BD05F247B1B9000D94D51 /* ProgrammaticConstraints.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A09BD05C247B19D700D94D51 /* ProgrammaticConstraints.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A09BD06B247B22F000D94D51 /* ProgrammaticConstraints.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A09BD069247B22E000D94D51 /* ProgrammaticConstraints.framework */; };
+		A09BD06C247B22F000D94D51 /* ProgrammaticConstraints.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A09BD069247B22E000D94D51 /* ProgrammaticConstraints.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A0C2E61B247881B5001399F2 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C2E61A247881B5001399F2 /* Post.swift */; };
 		A0E1D0722479D1F9003E1EA9 /* UIButton+ConvenienceInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E1D0712479D1F9003E1EA9 /* UIButton+ConvenienceInit.swift */; };
 /* End PBXBuildFile section */
@@ -43,7 +43,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A09BD05F247B1B9000D94D51 /* ProgrammaticConstraints.framework in Embed Frameworks */,
+				A09BD06C247B22F000D94D51 /* ProgrammaticConstraints.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -79,7 +79,7 @@
 		A0414AB423166A22002DE53C /* CircularImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
 		A0736BF32479874F00144300 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		A083959A9F134A85D08FB1E7 /* Pods-swipe_card_UI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swipe_card_UI.debug.xcconfig"; path = "Target Support Files/Pods-swipe_card_UI/Pods-swipe_card_UI.debug.xcconfig"; sourceTree = "<group>"; };
-		A09BD05C247B19D700D94D51 /* ProgrammaticConstraints.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ProgrammaticConstraints.framework; sourceTree = "<group>"; };
+		A09BD069247B22E000D94D51 /* ProgrammaticConstraints.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ProgrammaticConstraints.framework; sourceTree = "<group>"; };
 		A0C2E61A247881B5001399F2 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A0E1D0712479D1F9003E1EA9 /* UIButton+ConvenienceInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+ConvenienceInit.swift"; sourceTree = "<group>"; };
 		B416B0CE6FB2606D48D340E8 /* Pods-swipe_card_UI-swipe_card_UIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swipe_card_UI-swipe_card_UIUITests.release.xcconfig"; path = "Target Support Files/Pods-swipe_card_UI-swipe_card_UIUITests/Pods-swipe_card_UI-swipe_card_UIUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				940E56CD598B6A6CAA696D60 /* Pods_swipe_card_UI.framework in Frameworks */,
-				A09BD05E247B1B9000D94D51 /* ProgrammaticConstraints.framework in Frameworks */,
+				A09BD06B247B22F000D94D51 /* ProgrammaticConstraints.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,7 +105,7 @@
 		A0414A5023143CC8002DE53C = {
 			isa = PBXGroup;
 			children = (
-				A09BD05C247B19D700D94D51 /* ProgrammaticConstraints.framework */,
+				A09BD069247B22E000D94D51 /* ProgrammaticConstraints.framework */,
 				A0414A5B23143CC8002DE53C /* swipe_card_UI */,
 				A0414A5A23143CC8002DE53C /* Products */,
 				EEC5C494EBEA804970B44309 /* Pods */,

@@ -78,9 +78,8 @@ class MatchView: UIView {
     }
     
     func layoutViews() {
-        let itsaMatchSize = CGSize(width: 300, height: 80)
-        let descriptionLabelSize = CGSize(width: .zero, height: 75)
-        let keepSwipingButtonSize = CGSize(width: 300, height: 60)
+        let itsaMatchSize = CGSize(width: UIScreen.main.bounds.width * 0.8, height: 80)
+        let keepSwipingButtonSize = CGSize(width: UIScreen.main.bounds.width * 0.8, height: 60)
         let postImageWidth: CGFloat = 140
         let standardPadding: CGFloat = 16
         
@@ -96,45 +95,42 @@ class MatchView: UIView {
                                                   trailingAnchor: nil,
                                                   widthAnchor: nil,
                                                   heightAnchor: nil,
-                                                  borderPadding: .init(top: .zero, left: .zero, bottom: 16, right: .zero),
+                                                  borderPadding: .init(top: .zero, left: .zero, bottom: standardPadding, right: .zero),
                                                   size: itsaMatchSize)
         
         self.descriptionLabel.borderConstraints(topAnchor: nil,
                                                 leadingAnchor: self.leadingAnchor,
                                                 bottomAnchor: self.currentUserImageView.topAnchor,
                                                 trailingAnchor: self.trailingAnchor,
-                                                equalBorderPadding: standardPadding * 2,
-                                                size: descriptionLabelSize)
+                                                borderPadding: .init(top: .zero, left: standardPadding * 3, bottom: standardPadding * 2, right: standardPadding * 3))
         
         self.currentUserImageView.hybridConstraints(centerXAnchor: self.centerXAnchor,
                                                     centerYAnchor: self.centerYAnchor,
                                                     topAnchor: nil,
                                                     leadingAnchor: nil,
-                                                    bottomAnchor: self.descriptionLabel.topAnchor,
+                                                    bottomAnchor: nil,
                                                     trailingAnchor: nil,
                                                     widthAnchor: nil,
                                                     heightAnchor: nil,
-                                                    positionConstants: .init(x: .zero, y: standardPadding * 3),
-                                                    borderPadding: .init(top: .zero, left: .zero, bottom: .zero, right: standardPadding),
+                                                    positionConstants: .init(x: -(standardPadding + postImageWidth / 2), y: standardPadding * 3),
                                                     size: .init(width: postImageWidth, height: postImageWidth))
         
         self.matchedCardImageView.hybridConstraints(centerXAnchor: self.centerXAnchor,
                                                     centerYAnchor: self.centerYAnchor,
                                                     topAnchor: nil,
                                                     leadingAnchor: nil,
-                                                    bottomAnchor: self.descriptionLabel.topAnchor,
+                                                    bottomAnchor: nil,
                                                     trailingAnchor: nil,
                                                     widthAnchor: nil,
                                                     heightAnchor: nil,
-                                                    positionConstants: .init(x: .zero, y: standardPadding * 3),
-                                                    borderPadding: .init(top: .zero, left: standardPadding, bottom: .zero, right: .zero),
+                                                    positionConstants: .init(x: standardPadding + postImageWidth / 2, y: standardPadding * 3),
                                                     size: .init(width: postImageWidth, height: postImageWidth))
 
         self.keepSwipingButton.hybridConstraints(centerXAnchor: self.centerXAnchor,
                                                  centerYAnchor: nil,
                                                  topAnchor: self.matchedCardImageView.bottomAnchor,
                                                  leadingAnchor: nil,
-                                                 bottomAnchor: self.descriptionLabel.topAnchor,
+                                                 bottomAnchor: nil,
                                                  trailingAnchor: nil,
                                                  widthAnchor: nil,
                                                  heightAnchor: nil,
