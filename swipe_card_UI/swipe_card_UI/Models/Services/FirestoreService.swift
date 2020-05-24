@@ -19,7 +19,7 @@ final class FirestoreService {
     private let carsCollectionPath = "cars"
     private let homesCollectionPath = "homes"
     private let peopleCollectionPath = "people"
-    private let petsCollectionPath = "pest"
+    private let petsCollectionPath = "pets"
     
     // MARK: - Init
     

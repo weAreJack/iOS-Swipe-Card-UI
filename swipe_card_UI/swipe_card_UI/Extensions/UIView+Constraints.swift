@@ -47,7 +47,7 @@ extension UIView {
         }
         
         if let centerYAnchor = centerYAnchor {
-            let centerYConstraint = self.centerYAnchor.constraint(equalTo: centerYAnchor, constant: positionConstants.x)
+            let centerYConstraint = self.centerYAnchor.constraint(equalTo: centerYAnchor, constant: positionConstants.y)
             constraints[ConstraintKey.CenterYConstraint] = centerYConstraint
         }
         

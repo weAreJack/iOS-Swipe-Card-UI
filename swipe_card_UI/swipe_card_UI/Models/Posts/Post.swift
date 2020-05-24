@@ -16,7 +16,7 @@ class Post {
         return .white
     }
     
-    var imageUrl: String = "https://firebasestorage.googleapis.com/v0/b/swipe-b1dda.appspot.com/o/person.png?alt=media&token=dba0a24e-39fc-4138-a4cd-4f2b1d32f5b3"
+    var imageUrl: URL? = URL(string: "https://firebasestorage.googleapis.com/v0/b/swipe-b1dda.appspot.com/o/person.png?alt=media&token=dba0a24e-39fc-4138-a4cd-4f2b1d32f5b3")
     
     private let FirestoreKey_image = "imageUrl"
     
@@ -25,6 +25,7 @@ class Post {
     init() {}
     
     init(firestoreData: [String: Any]) {
-        self.imageUrl = firestoreData[FirestoreKey_image] as! String
+        let urlString = firestoreData[FirestoreKey_image] as! String
+        self.imageUrl = URL(string: urlString)
     }
 }

@@ -17,13 +17,14 @@ protocol ProducesCardViewModel {
 }
 
 extension ProducesCardViewModel {
+    
     var cardViewModel: CardViewModel {
         return toCardViewModel()
     }
 }
 
 struct CardViewModel {
-    let imageUrl: String
+    let imageUrl: URL?
     let backgroundColour: UIColor
     let attributedIntro: NSAttributedString
     let textAlignment: NSTextAlignment

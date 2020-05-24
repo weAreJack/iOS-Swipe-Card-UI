@@ -12,24 +12,42 @@ class KeepSwipingButton: UIButton {
     
     // MARK: - Init
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.configureViews()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        setupUI(rect)
+        self.layoutView(rect)
     }
     
     // MARK: - Methods
     
-    private func setupUI(_ rect: CGRect) {
-        setTitle("Keep Swiping", for: .normal)
-        setTitleColor(.white, for: .normal)
-        
+    private func configureViews() {
+        self.setTitle("Keep Swiping", for: .normal)
+        self.setTitleColor(.white, for: .normal)
+        self.clipsToBounds = true
+    }
+    
+    private func layoutView(_ rect: CGRect) {
         let cornerRadius = rect.height/2
+        self.layer.cornerRadius = cornerRadius
+        
+         self.addGradientLayer(rect, cornerRadius)
+    }
+    
+    private func addGradientLayer(_ rect: CGRect, _ cornerRadius: CGFloat) {
         let gradientLayer = CAGradientLayer()
         let leftColour = UIColor.colour1.cgColor
         let rightcolour = UIColor.colour2.cgColor
         
         gradientLayer.colors = [leftColour, rightcolour]
-        gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
+        gradientLayer.startPoint = CGPoint(x: .zero, y: 0.5)
         gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
         
         let maskLayer = CAShapeLayer()
@@ -40,12 +58,8 @@ class KeepSwipingButton: UIButton {
         maskLayer.path = maskPath
         maskLayer.fillRule = .evenOdd
         gradientLayer.mask = maskLayer
-        self.layer.insertSublayer(gradientLayer, at: 0)
+        self.layer.insertSublayer(gradientLayer, at: .zero)
         
-        clipsToBounds = true
-        layer.cornerRadius = cornerRadius
         gradientLayer.frame = rect
     }
-    
 }
-

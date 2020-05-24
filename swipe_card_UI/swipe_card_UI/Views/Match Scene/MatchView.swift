@@ -17,7 +17,7 @@ class MatchView: UIView {
     
     // MARK: - Properties
 
-    let descriptionLabel: UILabel = {
+    private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = .zero
         label.textColor = .white
@@ -26,13 +26,13 @@ class MatchView: UIView {
         return label
     }()
     
-    let itsAMatchImageView = UIImageView(image: #imageLiteral(resourceName: "its_a_match_view"))
-    let keepSwipingButton = KeepSwipingButton(type: .system)
-    let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
-    let currentUserImageView = CircularImageView(frame: CGRect())
-    let matchedCardImageView = CircularImageView(frame: CGRect())
+    private let itsAMatchImageView = UIImageView(image: #imageLiteral(resourceName: "its_a_match_view"))
+    private let keepSwipingButton = KeepSwipingButton(type: .system)
+    private let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+    private let currentUserImageView = CircularImageView(frame: CGRect())
+    private let matchedCardImageView = CircularImageView(frame: CGRect())
 
-    lazy var views = [
+    private lazy var views = [
         self.itsAMatchImageView,
         self.descriptionLabel,
         self.currentUserImageView,
@@ -40,7 +40,7 @@ class MatchView: UIView {
         self.keepSwipingButton
     ]
     
-    var viewModel: MatchedViewModel
+    private var viewModel: MatchedViewModel
     weak var delegate: MatchViewDelegate?
     
     private let fadeDuration: Double = 1
@@ -54,8 +54,8 @@ class MatchView: UIView {
         self.viewModel = viewModel
         super.init(frame: .zero)
         
-        self.layoutViews()
         self.configureViews()
+        self.layoutViews()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -63,25 +63,25 @@ class MatchView: UIView {
     }
     
     private func configureViews() {
-        self.currentUserImageView.sd_setImage(with: URL(string: self.viewModel.currentUserImageUrl), completed: nil)
+        self.currentUserImageView.sd_imageIndicator = SDWebImageActivityIndicator.medium
+        self.currentUserImageView.sd_setImage(with: self.viewModel.currentUserImageUrl, completed: nil)
         self.currentUserImageView.backgroundColor = viewModel.currentUserBackgroundColour
         
-        self.matchedCardImageView.sd_setImage(with: URL(string: self.viewModel.matchedCardImageUrl), completed: nil)
+        self.matchedCardImageView.sd_imageIndicator = SDWebImageActivityIndicator.medium
+        self.matchedCardImageView.sd_setImage(with: self.viewModel.matchedCardImageUrl, completed: nil)
         self.matchedCardImageView.backgroundColor = viewModel.matchedCardBackgroundColour
         
         self.keepSwipingButton.addTarget(self, action: #selector(self.handleDismiss), for: .touchUpInside)
         
-        self.setupBlurView()
-        self.startAnimations()
+        self.animateAddBlurView()
+        self.startMainAnimations()
     }
     
     func layoutViews() {
         let imageWidth: CGFloat = 140
         
-        self.views.forEach { view in
-            view.translatesAutoresizingMaskIntoConstraints = false
-            self.addSubview(view)
-            view.alpha = .zero
+        self.views.forEach {
+            self.addSubview($0)
         }
         
         self.itsAMatchImageView.constraints(centerXAnchor: self.centerXAnchor,
@@ -113,18 +113,17 @@ class MatchView: UIView {
                                            size: .init(width: 300, height: 60))
     }
     
-    private func setupBlurView() {
+    private func animateAddBlurView() {
         self.alpha = .zero
         self.visualEffectView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.handleDismiss)))
         
-        self.addSubview(visualEffectView)
+        self.addSubview(self.visualEffectView)
         self.visualEffectView.constraintsEqual(toView: self)
         
         self.animateFadeIn()
     }
     
     private func animateFadeIn() {
-        
         UIView.animate(withDuration: self.fadeDuration,
                        delay: self.fadeDelay,
                        usingSpringWithDamping: self.fadeSpringDamping,
@@ -135,13 +134,8 @@ class MatchView: UIView {
         })
     }
     
-    func startAnimations() {
+    func startMainAnimations() {
         let imageViewRotationOffset = 30 * CGFloat.pi/180
-        
-        self.views.forEach {
-            $0.alpha = 1
-        }
-        
         self.setstartingPositions(imageViewRotationOffset)
         self.startMainAnimations(imageViewRotationOffset)
     }
@@ -182,7 +176,6 @@ class MatchView: UIView {
     }
     
     private func animateFadeOut() {
-        
         UIView.animate(withDuration: self.fadeDuration,
                        delay: self.fadeDelay,
                        usingSpringWithDamping: self.fadeSpringDamping,
@@ -190,7 +183,7 @@ class MatchView: UIView {
                        options: .curveEaseOut,
                        animations: {
             self.alpha = .zero
-        }) { (_) in
+        }) { _ in
             self.removeFromSuperview()
         }
     }

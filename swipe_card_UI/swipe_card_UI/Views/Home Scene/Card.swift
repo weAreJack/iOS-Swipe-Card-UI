@@ -69,7 +69,8 @@ class Card: UIView {
         self.informationLabel.textColor = .white
         self.informationLabel.numberOfLines = .zero
         
-        self.imageView.sd_setImage(with: URL(string: self.viewModel.imageUrl), completed: nil)
+        self.imageView.sd_imageIndicator = SDWebImageActivityIndicator.medium
+        self.imageView.sd_setImage(with: self.viewModel.imageUrl, completed: nil)
         self.imageView.clipsToBounds = true
         self.imageView.contentMode = .scaleAspectFit
     }

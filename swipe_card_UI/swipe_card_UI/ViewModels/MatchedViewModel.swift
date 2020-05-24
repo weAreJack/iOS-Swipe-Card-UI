@@ -12,9 +12,9 @@ class MatchedViewModel {
     
     // MARK: - Properties
     
-    let currentUserImageUrl: String
+    let currentUserImageUrl: URL?
     let currentUserBackgroundColour: UIColor
-    let matchedCardImageUrl: String
+    let matchedCardImageUrl: URL?
     let matchedCardBackgroundColour: UIColor
     
     // MARK: - Init

@@ -7,14 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		170C1F6E9B40D4CFAE5EED7B /* Pods_swipe_card_UI_swipe_card_UIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5392C5E3DDA1F763860326D7 /* Pods_swipe_card_UI_swipe_card_UIUITests.framework */; };
 		940E56CD598B6A6CAA696D60 /* Pods_swipe_card_UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E417B50BE79C846B57B449D /* Pods_swipe_card_UI.framework */; };
-		9F75AE300679BD95A3A6B63F /* Pods_swipe_card_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A9CDD1DD68DC79EFBDEDB1 /* Pods_swipe_card_UITests.framework */; };
+		A0015801247AE1C000584AFB /* UIViewController+StatusBarCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0015800247AE1C000584AFB /* UIViewController+StatusBarCover.swift */; };
 		A0346A7724797BFB003A0E8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0346A7624797BFB003A0E8E /* GoogleService-Info.plist */; };
 		A0414A5D23143CC8002DE53C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414A5C23143CC8002DE53C /* AppDelegate.swift */; };
 		A0414A6423143CC9002DE53C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0414A6323143CC9002DE53C /* Assets.xcassets */; };
-		A0414A7223143CC9002DE53C /* swipe_card_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414A7123143CC9002DE53C /* swipe_card_UITests.swift */; };
-		A0414A7D23143CC9002DE53C /* swipe_card_UIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414A7C23143CC9002DE53C /* swipe_card_UIUITests.swift */; };
 		A0414A8F23143F99002DE53C /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414A8E23143F99002DE53C /* CardViewModel.swift */; };
 		A0414A91231440BA002DE53C /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414A90231440BA002DE53C /* Card.swift */; };
 		A0414A94231440E2002DE53C /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414A93231440E2002DE53C /* Car.swift */; };
@@ -31,7 +28,6 @@
 		A0414AAD231477E8002DE53C /* UIColor+AppColours.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414AAC231477E8002DE53C /* UIColor+AppColours.swift */; };
 		A0414AB123153CA8002DE53C /* MatchedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414AB023153CA8002DE53C /* MatchedViewModel.swift */; };
 		A0414AB523166A22002DE53C /* CircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414AB423166A22002DE53C /* CircularImageView.swift */; };
-		A0414AB72316CC39002DE53C /* HomeController+Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414AB62316CC39002DE53C /* HomeController+Methods.swift */; };
 		A0736BF42479874F00144300 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0736BF32479874F00144300 /* FirestoreService.swift */; };
 		A0736BF824799FB800144300 /* UIView+ConstraintsEqualTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0736BF724799FB800144300 /* UIView+ConstraintsEqualTo.swift */; };
 		A0736BFA2479A2BE00144300 /* UIView+CenteringConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0736BF92479A2BE00144300 /* UIView+CenteringConstraints.swift */; };
@@ -41,38 +37,16 @@
 		A0E1D0722479D1F9003E1EA9 /* UIButton+ConvenienceInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E1D0712479D1F9003E1EA9 /* UIButton+ConvenienceInit.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		A0414A6E23143CC9002DE53C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A0414A5123143CC8002DE53C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A0414A5823143CC8002DE53C;
-			remoteInfo = swipe_card_UI;
-		};
-		A0414A7923143CC9002DE53C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A0414A5123143CC8002DE53C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A0414A5823143CC8002DE53C;
-			remoteInfo = swipe_card_UI;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		2E417B50BE79C846B57B449D /* Pods_swipe_card_UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swipe_card_UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5392C5E3DDA1F763860326D7 /* Pods_swipe_card_UI_swipe_card_UIUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swipe_card_UI_swipe_card_UIUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92AD2B2735AC122D73D67090 /* Pods-swipe_card_UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swipe_card_UITests.debug.xcconfig"; path = "Target Support Files/Pods-swipe_card_UITests/Pods-swipe_card_UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A0015800247AE1C000584AFB /* UIViewController+StatusBarCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+StatusBarCover.swift"; sourceTree = "<group>"; };
 		A0346A7624797BFB003A0E8E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A0414A5923143CC8002DE53C /* swipe_card_UI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swipe_card_UI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0414A5C23143CC8002DE53C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0414A6323143CC9002DE53C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0414A6823143CC9002DE53C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A0414A6D23143CC9002DE53C /* swipe_card_UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = swipe_card_UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0414A7123143CC9002DE53C /* swipe_card_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swipe_card_UITests.swift; sourceTree = "<group>"; };
-		A0414A7323143CC9002DE53C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A0414A7823143CC9002DE53C /* swipe_card_UIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = swipe_card_UIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0414A7C23143CC9002DE53C /* swipe_card_UIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swipe_card_UIUITests.swift; sourceTree = "<group>"; };
-		A0414A7E23143CC9002DE53C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0414A8E23143F99002DE53C /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		A0414A90231440BA002DE53C /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		A0414A93231440E2002DE53C /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
@@ -89,7 +63,6 @@
 		A0414AAC231477E8002DE53C /* UIColor+AppColours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AppColours.swift"; sourceTree = "<group>"; };
 		A0414AB023153CA8002DE53C /* MatchedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedViewModel.swift; sourceTree = "<group>"; };
 		A0414AB423166A22002DE53C /* CircularImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImageView.swift; sourceTree = "<group>"; };
-		A0414AB62316CC39002DE53C /* HomeController+Methods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeController+Methods.swift"; sourceTree = "<group>"; };
 		A0736BF32479874F00144300 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		A0736BF724799FB800144300 /* UIView+ConstraintsEqualTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstraintsEqualTo.swift"; sourceTree = "<group>"; };
 		A0736BF92479A2BE00144300 /* UIView+CenteringConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CenteringConstraints.swift"; sourceTree = "<group>"; };
@@ -114,22 +87,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A0414A6A23143CC9002DE53C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9F75AE300679BD95A3A6B63F /* Pods_swipe_card_UITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A0414A7523143CC9002DE53C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				170C1F6E9B40D4CFAE5EED7B /* Pods_swipe_card_UI_swipe_card_UIUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -137,8 +94,6 @@
 			isa = PBXGroup;
 			children = (
 				A0414A5B23143CC8002DE53C /* swipe_card_UI */,
-				A0414A7023143CC9002DE53C /* swipe_card_UITests */,
-				A0414A7B23143CC9002DE53C /* swipe_card_UIUITests */,
 				A0414A5A23143CC8002DE53C /* Products */,
 				EEC5C494EBEA804970B44309 /* Pods */,
 				AA129A384E75F2A2D29F807A /* Frameworks */,
@@ -149,8 +104,6 @@
 			isa = PBXGroup;
 			children = (
 				A0414A5923143CC8002DE53C /* swipe_card_UI.app */,
-				A0414A6D23143CC9002DE53C /* swipe_card_UITests.xctest */,
-				A0414A7823143CC9002DE53C /* swipe_card_UIUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -171,24 +124,6 @@
 			path = swipe_card_UI;
 			sourceTree = "<group>";
 		};
-		A0414A7023143CC9002DE53C /* swipe_card_UITests */ = {
-			isa = PBXGroup;
-			children = (
-				A0414A7123143CC9002DE53C /* swipe_card_UITests.swift */,
-				A0414A7323143CC9002DE53C /* Info.plist */,
-			);
-			path = swipe_card_UITests;
-			sourceTree = "<group>";
-		};
-		A0414A7B23143CC9002DE53C /* swipe_card_UIUITests */ = {
-			isa = PBXGroup;
-			children = (
-				A0414A7C23143CC9002DE53C /* swipe_card_UIUITests.swift */,
-				A0414A7E23143CC9002DE53C /* Info.plist */,
-			);
-			path = swipe_card_UIUITests;
-			sourceTree = "<group>";
-		};
 		A0414A8A23143F42002DE53C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,7 +137,6 @@
 			isa = PBXGroup;
 			children = (
 				A0414A9723144112002DE53C /* HomeController.swift */,
-				A0414AB62316CC39002DE53C /* HomeController+Methods.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -228,6 +162,7 @@
 		A0414AA723147381002DE53C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A0015800247AE1C000584AFB /* UIViewController+StatusBarCover.swift */,
 				A0414AA8231473B8002DE53C /* UIView+DropShadow.swift */,
 				A0736BF724799FB800144300 /* UIView+ConstraintsEqualTo.swift */,
 				A0736BF92479A2BE00144300 /* UIView+CenteringConstraints.swift */,
@@ -325,45 +260,6 @@
 			productReference = A0414A5923143CC8002DE53C /* swipe_card_UI.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A0414A6C23143CC9002DE53C /* swipe_card_UITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A0414A8423143CC9002DE53C /* Build configuration list for PBXNativeTarget "swipe_card_UITests" */;
-			buildPhases = (
-				C993791BD3F02FDC9C3950EB /* [CP] Check Pods Manifest.lock */,
-				A0414A6923143CC9002DE53C /* Sources */,
-				A0414A6A23143CC9002DE53C /* Frameworks */,
-				A0414A6B23143CC9002DE53C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A0414A6F23143CC9002DE53C /* PBXTargetDependency */,
-			);
-			name = swipe_card_UITests;
-			productName = swipe_card_UITests;
-			productReference = A0414A6D23143CC9002DE53C /* swipe_card_UITests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		A0414A7723143CC9002DE53C /* swipe_card_UIUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A0414A8723143CC9002DE53C /* Build configuration list for PBXNativeTarget "swipe_card_UIUITests" */;
-			buildPhases = (
-				3337EEEAC81784BD58DBB6CE /* [CP] Check Pods Manifest.lock */,
-				A0414A7423143CC9002DE53C /* Sources */,
-				A0414A7523143CC9002DE53C /* Frameworks */,
-				A0414A7623143CC9002DE53C /* Resources */,
-				55E5A47E56CBCB83A771504B /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A0414A7A23143CC9002DE53C /* PBXTargetDependency */,
-			);
-			name = swipe_card_UIUITests;
-			productName = swipe_card_UIUITests;
-			productReference = A0414A7823143CC9002DE53C /* swipe_card_UIUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -376,14 +272,6 @@
 				TargetAttributes = {
 					A0414A5823143CC8002DE53C = {
 						CreatedOnToolsVersion = 10.2.1;
-					};
-					A0414A6C23143CC9002DE53C = {
-						CreatedOnToolsVersion = 10.2.1;
-						TestTargetID = A0414A5823143CC8002DE53C;
-					};
-					A0414A7723143CC9002DE53C = {
-						CreatedOnToolsVersion = 10.2.1;
-						TestTargetID = A0414A5823143CC8002DE53C;
 					};
 				};
 			};
@@ -401,8 +289,6 @@
 			projectRoot = "";
 			targets = (
 				A0414A5823143CC8002DE53C /* swipe_card_UI */,
-				A0414A6C23143CC9002DE53C /* swipe_card_UITests */,
-				A0414A7723143CC9002DE53C /* swipe_card_UIUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -414,20 +300,6 @@
 			files = (
 				A0414A6423143CC9002DE53C /* Assets.xcassets in Resources */,
 				A0346A7724797BFB003A0E8E /* GoogleService-Info.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A0414A6B23143CC9002DE53C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A0414A7623143CC9002DE53C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,67 +345,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3337EEEAC81784BD58DBB6CE /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-swipe_card_UI-swipe_card_UIUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		55E5A47E56CBCB83A771504B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-swipe_card_UI-swipe_card_UIUITests/Pods-swipe_card_UI-swipe_card_UIUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-swipe_card_UI-swipe_card_UIUITests/Pods-swipe_card_UI-swipe_card_UIUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-swipe_card_UI-swipe_card_UIUITests/Pods-swipe_card_UI-swipe_card_UIUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C993791BD3F02FDC9C3950EB /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-swipe_card_UITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -557,6 +368,7 @@
 				A0414A94231440E2002DE53C /* Car.swift in Sources */,
 				A0736BF824799FB800144300 /* UIView+ConstraintsEqualTo.swift in Sources */,
 				A0414A91231440BA002DE53C /* Card.swift in Sources */,
+				A0015801247AE1C000584AFB /* UIViewController+StatusBarCover.swift in Sources */,
 				A0414AAD231477E8002DE53C /* UIColor+AppColours.swift in Sources */,
 				A0414AB523166A22002DE53C /* CircularImageView.swift in Sources */,
 				A0414AA623145C9A002DE53C /* KeepSwipingButton.swift in Sources */,
@@ -565,40 +377,10 @@
 				A0414A9623144105002DE53C /* Person.swift in Sources */,
 				A0E1D0722479D1F9003E1EA9 /* UIButton+ConvenienceInit.swift in Sources */,
 				A0414AA223145C7D002DE53C /* MatchView.swift in Sources */,
-				A0414AB72316CC39002DE53C /* HomeController+Methods.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A0414A6923143CC9002DE53C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A0414A7223143CC9002DE53C /* swipe_card_UITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A0414A7423143CC9002DE53C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A0414A7D23143CC9002DE53C /* swipe_card_UIUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		A0414A6F23143CC9002DE53C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A0414A5823143CC8002DE53C /* swipe_card_UI */;
-			targetProxy = A0414A6E23143CC9002DE53C /* PBXContainerItemProxy */;
-		};
-		A0414A7A23143CC9002DE53C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A0414A5823143CC8002DE53C /* swipe_card_UI */;
-			targetProxy = A0414A7923143CC9002DE53C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		A0414A7F23143CC9002DE53C /* Debug */ = {
@@ -725,6 +507,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FA25E4B77Y;
 				INFOPLIST_FILE = swipe_card_UI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -744,6 +527,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FA25E4B77Y;
 				INFOPLIST_FILE = swipe_card_UI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -752,92 +536,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		A0414A8523143CC9002DE53C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 92AD2B2735AC122D73D67090 /* Pods-swipe_card_UITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FA25E4B77Y;
-				INFOPLIST_FILE = swipe_card_UITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "JAS2019.swipe-card-UITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/swipe_card_UI.app/swipe_card_UI";
-			};
-			name = Debug;
-		};
-		A0414A8623143CC9002DE53C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D745A9AD7B83691A24D03801 /* Pods-swipe_card_UITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FA25E4B77Y;
-				INFOPLIST_FILE = swipe_card_UITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "JAS2019.swipe-card-UITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/swipe_card_UI.app/swipe_card_UI";
-			};
-			name = Release;
-		};
-		A0414A8823143CC9002DE53C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B70284FA7E6BCD52CE020EE7 /* Pods-swipe_card_UI-swipe_card_UIUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FA25E4B77Y;
-				INFOPLIST_FILE = swipe_card_UIUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "JAS2019.swipe-card-UIUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = swipe_card_UI;
-			};
-			name = Debug;
-		};
-		A0414A8923143CC9002DE53C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B416B0CE6FB2606D48D340E8 /* Pods-swipe_card_UI-swipe_card_UIUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FA25E4B77Y;
-				INFOPLIST_FILE = swipe_card_UIUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "JAS2019.swipe-card-UIUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = swipe_card_UI;
 			};
 			name = Release;
 		};
@@ -858,24 +556,6 @@
 			buildConfigurations = (
 				A0414A8223143CC9002DE53C /* Debug */,
 				A0414A8323143CC9002DE53C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A0414A8423143CC9002DE53C /* Build configuration list for PBXNativeTarget "swipe_card_UITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A0414A8523143CC9002DE53C /* Debug */,
-				A0414A8623143CC9002DE53C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A0414A8723143CC9002DE53C /* Build configuration list for PBXNativeTarget "swipe_card_UIUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A0414A8823143CC9002DE53C /* Debug */,
-				A0414A8923143CC9002DE53C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
