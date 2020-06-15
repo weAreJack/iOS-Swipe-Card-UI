@@ -8,18 +8,15 @@
 
 import UIKit
 
-class HomeController: UIViewController {
+class HomeController: BaseController {
     
     //MARK:- Properties
     
-    private var posts = [ProducesCardViewModel]()
     private let bottomControls = BottomControls()
     private let cardsDeckView = UIView()
     private let navBar = NavBar()
-    
     private var previousCard: Card?
     private var topCard: Card?
-    private var activityView: UIActivityIndicatorView?
     
     private lazy var mainStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [self.cardsDeckView, self.bottomControls])
@@ -30,7 +27,8 @@ class HomeController: UIViewController {
         return stackView
     }()
     
-    private let user = Person()
+    private var posts = [CardViewModel]()
+    private var presenter: HomePresenterProtocol?
     
     private let navBarHeight: CGFloat = 60
     private let swipeTranslation: CGFloat = 700
@@ -40,9 +38,11 @@ class HomeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.presenter = HomePresenter(self)
+        
         self.configureViews()
         self.layoutViews()
-        self.setupAllCards()
+        self.presenter?.fetchPosts()
     }
     
     // MARK: - Methods
@@ -50,7 +50,6 @@ class HomeController: UIViewController {
     func configureViews() {
         self.view.backgroundColor = .white
         self.navigationController?.navigationBar.isHidden = true
-        
         self.bottomControls.delegate = self
     }
     
@@ -88,8 +87,8 @@ class HomeController: UIViewController {
         rotationAnimation.toValue = angle * CGFloat.pi / 180
         rotationAnimation.duration = duration
         
-        let card = topCard
-        topCard = card?.nextCard
+        let card = self.topCard
+        self.topCard = card?.nextCard
         
         CATransaction.setCompletionBlock {
             card?.removeFromSuperview()
@@ -101,8 +100,8 @@ class HomeController: UIViewController {
         CATransaction.commit()
     }
     
-    private func presentMatchView(withMatch: Card) {
-        let matchView = MatchView(viewModel: MatchedViewModel(user: self.user, card: withMatch))
+    private func presentMatchView(viewModel: MatchedViewModel) {
+        let matchView = MatchView(viewModel: viewModel)
         matchView.delegate = self
         
         self.view.addSubview(matchView)
@@ -111,88 +110,10 @@ class HomeController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
-    private func setupAllCards() {
-        self.showActivityView()
-        FirestoreService.shared.fetchPosts { [weak self] posts in
-            guard let self = self else {return}
-            
-            self.hideActivityView()
-            guard var posts = posts else {
-                self.showErrorAlert()
-                return
-            }
-            
-            posts.shuffle()
-            posts.forEach { post in
-                let card = self.setupCard(post: post as! ProducesCardViewModel)
-                self.linkCardInList(card: card)
-            }
-        }
-    }
-    
-    private func showActivityView() {
-        let animationDuration: Double = 0.15
-        
-        self.activityView = UIActivityIndicatorView(style: .whiteLarge)
-        self.activityView?.color = .black
-        self.activityView?.alpha = .zero
-        
-        self.cardsDeckView.addSubview(self.activityView!)
-        self.activityView?.centeringConstraints(centerXAnchor: self.cardsDeckView.centerXAnchor,
-                                                centerYAnchor: self.cardsDeckView.centerYAnchor)
-        
-        self.activityView?.startAnimating()
-        UIView.animate(withDuration: animationDuration) {
-            self.activityView?.alpha = .one
-        }
-    }
-    
-    private func hideActivityView() {
-        let animationDuration: Double = 0.15
-        
-        UIView.animate(withDuration: animationDuration, animations: {
-            self.activityView?.alpha = .zero
-        }) { _ in
-            self.activityView?.stopAnimating()
-            self.activityView?.removeFromSuperview()
-            self.activityView = nil
-        }
-    }
-    
-    private func showErrorAlert() {
-        let alertView = UIAlertController(title: "Ooops, something went wrong.",
-                                          message: "We could not load any posts. Please check your internet connection and try again.",
-                                          preferredStyle: .alert)
-        let okayAction = UIAlertAction(title: "Okay", style: .cancel) { _ in
-            alertView.dismiss(animated: true)
-        }
-        alertView.addAction(okayAction)
-        self.present(alertView, animated: true)
-    }
-    
-    private func linkCardInList(card: Card) {
-        self.previousCard?.nextCard = card
-        self.previousCard = card
-        if self.topCard == nil {
-            self.topCard = card
-        }
-    }
-    
-    private func setupCard(post: ProducesCardViewModel) -> Card {
-        let card = Card(viewModel: post.toCardViewModel())
-        card.delegate = self
-        
-        self.cardsDeckView.addSubview(card)
-        self.cardsDeckView.sendSubviewToBack(card)
-        card.constraintsEqual(toView: self.cardsDeckView)
-        
-        return card
-    }
-    
     private func handleRefresh() {
-        if self.topCard == nil {
-            self.setupAllCards()
-        }
+        self.cardsDeckView.subviews.forEach { $0.removeFromSuperview() }
+        self.topCard = nil
+        self.presenter?.fetchPosts()
     }
     
     private func handleDislike() {
@@ -200,12 +121,12 @@ class HomeController: UIViewController {
     }
     
     private func handleLike() {
-        guard let card = topCard else {
+        guard let post = self.topCard?.viewModel else {
             return
         }
         
         self.performSwipeAnimation(translation: self.swipeTranslation, angle: self.swipeAngle)
-        self.presentMatchView(withMatch: card)
+        self.presenter?.checkForMatch(post: post)
     }
 }
 
@@ -236,5 +157,36 @@ extension HomeController: CardDelegate, MatchViewDelegate {
     
     func matchViewDidDismissMatchView(matchView: MatchView) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+}
+
+extension HomeController: HomePresenterDelegate {
+    
+    func homePresenterDidFindMatch(_ homePresenter: HomePresenter, matchedViewModel: MatchedViewModel) {
+        self.presentMatchView(viewModel: matchedViewModel)
+    }
+    
+    func homePresenterDidBeginPostFetch(_ homePresenter: HomePresenter) {
+        self.showActivityView()
+    }
+    
+    func homePresenterDidFetchPost(_ homePresenter: HomePresenter, post: CardViewModel) {
+        self.hideActivityView()
+        
+        let card = Card(viewModel: post)
+        card.delegate = self
+        self.cardsDeckView.addSubview(card)
+        self.cardsDeckView.sendSubviewToBack(card)
+        card.constraintsEqual(toView: self.cardsDeckView)
+        
+        self.linkCardInList(card: card)
+    }
+    
+    private func linkCardInList(card: Card) {
+        self.previousCard?.nextCard = card
+        self.previousCard = card
+        if self.topCard == nil {
+            self.topCard = card
+        }
     }
 }

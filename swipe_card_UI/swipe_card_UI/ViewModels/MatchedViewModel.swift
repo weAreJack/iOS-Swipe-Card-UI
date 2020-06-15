@@ -19,10 +19,10 @@ class MatchedViewModel {
     
     // MARK: - Init
     
-    init(user: Person, card: Card) {
+    init(user: Person, post: CardViewModel) {
         self.currentUserImageUrl = user.imageUrl
         self.currentUserBackgroundColour = .purple
-        self.matchedCardImageUrl = card.viewModel.imageUrl
-        self.matchedCardBackgroundColour = card.viewModel.backgroundColour
+        self.matchedCardImageUrl = post.imageUrl
+        self.matchedCardBackgroundColour = post.backgroundColour
     }
 }
